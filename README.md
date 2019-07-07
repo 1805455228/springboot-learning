@@ -8,9 +8,18 @@
 
 * 3、springboot使用devtools实现热部署
 
-* 4、springboot 集成 mybatis-plus、分页、自动生成代码
+* 4、springboot 集成 mybatis-plus、分页、代码生成
 
----
 * 5、springboot 集成 swagger2 restful api 调用测试
 
-* 6、springboot 多数据源
+### 学习任务计划
+
+---
+
+* springboot 登录权限、认证
+
+* springboot 多数据源
+
+* Jpa的代码生成
+
+
