@@ -26,6 +26,10 @@
 
 * springboot 整合Jpa
 
+* springboot 整合netty 
+
+* springboot 基于netty IM
+
 * Jpa的代码生成
 
 * springboot 整合mongodb
