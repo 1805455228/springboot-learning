@@ -3,6 +3,8 @@ package com.hins.sp10rabbitmq.entity;
 import lombok.Data;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 /**
  * @author qixuan.chen
  * @date 2019-08-02 22:27
@@ -10,7 +12,7 @@ import lombok.ToString;
 
 @Data
 @ToString
-public class User {
+public class User implements Serializable {
 
     private String id;
 

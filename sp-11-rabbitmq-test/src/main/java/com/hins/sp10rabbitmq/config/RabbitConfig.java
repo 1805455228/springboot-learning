@@ -20,6 +20,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
+import sun.jvm.hotspot.utilities.MessageQueue;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ScheduledExecutorService;
 
 /**
  * @author 2019年6月25日11:04:21
@@ -28,7 +34,7 @@ import org.springframework.core.env.Environment;
 @Configuration
 public class RabbitConfig {
 
-    private static final Logger log= LoggerFactory.getLogger(RabbitConfig.class);
+    private static final Logger log = LoggerFactory.getLogger(RabbitConfig.class);
 
     @Autowired
     private Environment env;
@@ -74,12 +80,26 @@ public class RabbitConfig {
     public static final String USER_ORDER_ROUTINGKEY = "user_order_routingkey";
 
 
+    //================延迟消息队列（死信 消息的TTL dlx）========================
+    //定时消息推送（如订单1小时候未支付，删除订单）、或者焦点文章发布消息通知提醒
+    //过期消息队列 死信消息队列（不需要消费者监听）
+    public static final String TTL_EXCHANGE = "ttl_exchange";
+    public static final String TTL_QUEUE = "ttl_queue";//（过期消息队列，不需要消费者监听）
+    public static final String TTL_ROUTINGKEY = "ttl_routingkey";
+
+    // （需要消费者监听）
+    public static final String DELAY_EXCHANGE = "delay_exchange";
+    public static final String DELAY_QUEUE = "delay_queue";//（需要消费者监听）
+    public static final String DELAY_ROUTINGKEY = "delay_routingkey";
+
+
     /**
      * 单一消费者
+     *
      * @return
      */
     @Bean(name = "singleListenerContainer")
-    public SimpleRabbitListenerContainerFactory listenerContainer(){
+    public SimpleRabbitListenerContainerFactory listenerContainer() {
         SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
         factory.setConnectionFactory(connectionFactory);
         factory.setMessageConverter(new Jackson2JsonMessageConverter());
@@ -94,24 +114,25 @@ public class RabbitConfig {
 
     /**
      * 多个消费者
+     *
      * @return
      */
     @Bean(name = "multiListenerContainer")
-    public SimpleRabbitListenerContainerFactory multiListenerContainer(){
+    public SimpleRabbitListenerContainerFactory multiListenerContainer() {
         SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();
-        factoryConfigurer.configure(factory,connectionFactory);
+        factoryConfigurer.configure(factory, connectionFactory);
         factory.setMessageConverter(new Jackson2JsonMessageConverter());
         //消息确认机制
         factory.setAcknowledgeMode(AcknowledgeMode.NONE);
         //并发配置
-        factory.setConcurrentConsumers(env.getProperty("spring.rabbitmq.listener.concurrency",int.class));
-        factory.setMaxConcurrentConsumers(env.getProperty("spring.rabbitmq.listener.max-concurrency",int.class));
-        factory.setPrefetchCount(env.getProperty("spring.rabbitmq.listener.prefetch",int.class));
+        factory.setConcurrentConsumers(env.getProperty("spring.rabbitmq.listener.concurrency", int.class));
+        factory.setMaxConcurrentConsumers(env.getProperty("spring.rabbitmq.listener.max-concurrency", int.class));
+        factory.setPrefetchCount(env.getProperty("spring.rabbitmq.listener.prefetch", int.class));
         return factory;
     }
 
     @Bean
-    public RabbitTemplate rabbitTemplate(){
+    public RabbitTemplate rabbitTemplate() {
         connectionFactory.setPublisherConfirms(true);
         connectionFactory.setPublisherReturns(true);
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
@@ -119,19 +140,17 @@ public class RabbitConfig {
         rabbitTemplate.setConfirmCallback(new RabbitTemplate.ConfirmCallback() {
             @Override
             public void confirm(CorrelationData correlationData, boolean ack, String cause) {
-                log.info("消息发送成功:correlationData({}),ack({}),cause({})",correlationData,ack,cause);
+                log.info("消息发送成功:correlationData({}),ack({}),cause({})", correlationData, ack, cause);
             }
         });
         rabbitTemplate.setReturnCallback(new RabbitTemplate.ReturnCallback() {
             @Override
             public void returnedMessage(Message message, int replyCode, String replyText, String exchange, String routingKey) {
-                log.info("消息丢失:exchange({}),route({}),replyCode({}),replyText({}),message:{}",exchange,routingKey,replyCode,replyText,message);
+                log.info("消息丢失:exchange({}),route({}),replyCode({}),replyText({}),message:{}", exchange, routingKey, replyCode, replyText, message);
             }
         });
         return rabbitTemplate;
     }
-
-
 
 
     //================场景一：异步记录用户操作日志===================
@@ -139,7 +158,7 @@ public class RabbitConfig {
     //交换器（路由模式）
     @Bean
     public DirectExchange logUserExchange() {
-        return new DirectExchange(LOG_USER_EXCHANGE,true,false);
+        return new DirectExchange(LOG_USER_EXCHANGE, true, false);
     }
 
     //队列
@@ -155,13 +174,12 @@ public class RabbitConfig {
     }
 
 
-
     //================场景二：注册时，异步发邮件，发短信===================
 
     //交换机（路由模式）
     @Bean
     public DirectExchange emailExchange() {
-        return new DirectExchange(EMAIL_EXCHANGE,true,false);
+        return new DirectExchange(EMAIL_EXCHANGE, true, false);
     }
 
     //队列
@@ -177,13 +195,12 @@ public class RabbitConfig {
     }
 
 
-
     //================场景二：给抢单、秒杀等高并发系统 限流、缓压===================
 
     //交换机（主题模式）
     @Bean
     public TopicExchange userOrderExchange() {
-        return new TopicExchange(USER_ORDER_EXCHANGE,true,false);
+        return new TopicExchange(USER_ORDER_EXCHANGE, true, false);
     }
 
     //队列
@@ -200,18 +217,19 @@ public class RabbitConfig {
 
     /**
      * 多个消费者
+     *
      * @return
      */
     @Bean
-    public SimpleMessageListenerContainer listenerContainerUserOrder(@Qualifier("userOrderQueue") Queue userOrderQueue){
+    public SimpleMessageListenerContainer listenerContainerUserOrder(@Qualifier("userOrderQueue") Queue userOrderQueue) {
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
         container.setConnectionFactory(connectionFactory);
         container.setMessageConverter(new Jackson2JsonMessageConverter());
 
         //并发配置
-        container.setConcurrentConsumers(env.getProperty("spring.rabbitmq.listener.concurrency",int.class));
-        container.setMaxConcurrentConsumers(env.getProperty("spring.rabbitmq.listener.max-concurrency",int.class));
-        container.setPrefetchCount(env.getProperty("spring.rabbitmq.listener.prefetch",int.class));
+        container.setConcurrentConsumers(env.getProperty("spring.rabbitmq.listener.concurrency", int.class));
+        container.setMaxConcurrentConsumers(env.getProperty("spring.rabbitmq.listener.max-concurrency", int.class));
+        container.setPrefetchCount(env.getProperty("spring.rabbitmq.listener.prefetch", int.class));
 
         //消息确认机制
         container.setQueues(userOrderQueue);
@@ -220,6 +238,51 @@ public class RabbitConfig {
 
         return container;
     }
+
+
+    //================延迟消息队列（ttl过期 dlx死信） =====begin========================
+    //定时消息推送（如订单1小时候未支付，删除订单）、或者焦点文章发布消息通知提醒
+    @Bean
+    public DirectExchange ttlExchange() {
+        return new DirectExchange(TTL_EXCHANGE, true, false);
+    }
+
+    //队列 (TTL过期消息队列)
+    @Bean
+    public Queue ttlQueue() {
+        //过期转发---配置
+        Map<String, Object> params = new HashMap<>();
+        // 配置到期后转发的交换
+        params.put("x-dead-letter-exchange", DELAY_EXCHANGE);
+        // 配置到期后转发的路由键
+        params.put("x-dead-letter-routing-key", DELAY_ROUTINGKEY);
+        //params.put("x-message-ttl",3*1000);
+        return new Queue(TTL_QUEUE, true, false, false, params);
+    }
+
+    //TTL队列 和 交换机绑定
+    @Bean
+    public Binding ttlBinding() {
+        return BindingBuilder.bind(ttlQueue()).to(ttlExchange()).with(RabbitConfig.TTL_ROUTINGKEY);
+    }
+
+    //实际消费队列
+    @Bean
+    public DirectExchange delayExchange() {
+        return new DirectExchange(DELAY_EXCHANGE, true, false);
+    }
+
+    @Bean
+    public Queue delayQueue() {
+        return new Queue(DELAY_QUEUE, true); // 队列持久
+    }
+
+    //转发队列 和 交换机 绑定
+    @Bean
+    public Binding delayBinding() {
+        return BindingBuilder.bind(delayQueue()).to(delayExchange()).with(RabbitConfig.DELAY_ROUTINGKEY);
+    }
+    //================延迟消息队列 （ttl过期 dlx死信） =====end========================
 
 }
 
