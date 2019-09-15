@@ -16,17 +16,23 @@
 
 * 7、springboot 集成Security实现登录安全、权限验证
 
+* 8、springboot 整合netty（IM需求待实现）
+
+* 9、springboot 整合redis
+
+* 10、springboot 整合消息中间件rabbitmq
+
+* 13、springboot 事务使用
+
 ### 学习任务计划
 
 ---
 
-* springboot 整合消息中间件rabbitmq
+* springboot 整合ElasticSearch（搜索、全文检索）
 
 * springboot 多数据源
 
 * springboot 整合Jpa
-
-* springboot 整合netty 
 
 * springboot 基于netty IM
 
@@ -36,7 +42,6 @@
 
 * springboot 集成 shiro 权限认证
 
-* springboot 整合redis
 
 * springboot 之 tomcat集群后的session共享问题解决方案
 

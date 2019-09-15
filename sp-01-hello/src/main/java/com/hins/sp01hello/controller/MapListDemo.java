@@ -28,6 +28,42 @@ public class MapListDemo {
         Map<String,Object> m2 = new ConcurrentHashMap();
         m2.put("dd","eeee");
 
+        Map<String,Object>  map3 =new Hashtable<>();
+        map3.put("key","vvvv");
+
+        String[] keys ={"qqqq","2222","444444","中国馆过"};
+        int n = 20;//数组的长度（数组允许存储的范围）
+        //计算这个key应该存储到数组的那个位置
+        for (String key:keys) {
+            int h;
+            int hash = (h = key.hashCode()) ^ (h >>> 16);//根据hashcode 计算hash
+            int i = (n - 1) & hash;
+            //System.out.println("====="+i);
+
+            System.out.println("===1==="+hash(key.hashCode()));
+            //System.out.println("===2==="+indexFor(key.hashCode(),n));
+        }
+
     }
+
+    /**
+     * 根据hashcode 计算hash
+     */
+    static int hash(int h) {
+        //h为hashcode
+        return h ^ (h >>> 7) ^ (h >>> 4);
+    }
+
+    /**
+     * 计算位置
+     * @param h
+     * @param length
+     * @return
+     */
+    static int indexFor(int h, int length) {
+        //h为hashcode
+        return h & (length-1);
+    }
+
 
 }
