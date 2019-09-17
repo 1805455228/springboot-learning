@@ -1,4 +1,4 @@
-package com.hins.sp01hello.controller;
+package com.hins.sp01hello.JavaBean;
 
 import java.util.concurrent.*;
 

@@ -1,4 +1,4 @@
-package com.hins.sp01hello.controller;
+package com.hins.sp01hello.JavaBean;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -27,6 +27,7 @@ public class CrunchifyConcurrentHashMapVsSynchronizedMap {
      * @throws InterruptedException
      */
     public static void main(String[] args) throws InterruptedException {
+
 
         // Hashtable 线程安全 效率低
         crunchifyHashTableObject = new Hashtable<>();
