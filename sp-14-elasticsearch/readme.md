@@ -7,6 +7,9 @@
 
 * 2：spring-boot-starter-data-elasticsearch（这个是spring做的es集成包，更新不会很及时）后续官方会不支持了 要使用Java High Level REST Client来代替
 
+* 3：TransportClient这种方式，官方已经明确表示在ES 7.0版本中将弃用TransportClient客户端，且在8.0版本中完全移除它
+
+--- 所以使用第一种方案比较可靠
 
 ## 1、添加maven依赖坐标
 
