@@ -51,7 +51,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .formLogin()                    // 定义当需要用户登录时候，转到的登录页面。
             .loginPage("/login")                        // 设置登录页面
             .loginProcessingUrl("/login")                   // 自定义的登录接口
-            //.defaultSuccessUrl("/index").permitAll()      // 登录成功之后，默认跳转的页面 从哪里转过来，登录通过后就跳转到那个URL
+            //.defaultSuccessUrl("/book/list").permitAll()      // 登录成功之后，默认跳转的页面 从哪里转过来，登录通过后就跳转到那个URL
             //.successForwardUrl("/index").permitAll()        // 登录成功之后，默认跳转的页面 登录后固定跳转URL
             //.failureUrl("/login-error").permitAll()         //
             .successHandler(myAuthenctiationSuccessHandler)   //登录成功返回Json
