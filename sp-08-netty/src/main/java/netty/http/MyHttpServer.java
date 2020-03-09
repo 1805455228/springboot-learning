@@ -16,7 +16,7 @@ public class MyHttpServer {
         public static void main(String[] args) {
 
             NioEventLoopGroup bossGroup = new NioEventLoopGroup();
-            NioEventLoopGroup workGroup = new NioEventLoopGroup();
+            NioEventLoopGroup workGroup = new NioEventLoopGroup();//默认数量是：cpu核数乘以2
 
             try {
                 ServerBootstrap serverBootstrap = new ServerBootstrap();
