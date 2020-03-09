@@ -18,6 +18,10 @@
 
 * 8、springboot 整合netty（IM需求待实现）
 
+    - netty tcp 粘包拆包解决方法（编码解码协议）
+    - 简单的HTTP服务端
+    
+    
 * 9、springboot 整合redis
 
 * 10、springboot 整合消息中间件rabbitmq
