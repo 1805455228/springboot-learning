@@ -9,6 +9,7 @@ import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.net.URI;
+import java.util.Map;
 
 /**
  * @author qixuan.chen
@@ -16,6 +17,7 @@ import java.net.URI;
  */
 @Slf4j
 public class MyHttpServerHandler extends SimpleChannelInboundHandler<HttpObject> {
+
 
     /**
      *  重写父类其中的方法（快捷键 ctrl+o） 客户端发送消息
@@ -40,11 +42,17 @@ public class MyHttpServerHandler extends SimpleChannelInboundHandler<HttpObject>
                 return;
             }
 
+            //request.headers();
+            FullHttpRequest request2 = (FullHttpRequest) msg;
+            Map<String, String> parmMap = new RequestParser(request2).parse(); // 将GET, POST所有请求参数转换成Map对象
+            log.info("参数: "+parmMap);
+
+
             log.info("msg类型："+msg.getClass());
             log.info("客户端地址："+ctx.channel().remoteAddress());
 
             // 返回信息
-            ByteBuf content = Unpooled.copiedBuffer("Hello,World 我是服务端", CharsetUtil.UTF_8);
+            ByteBuf content = Unpooled.copiedBuffer("Hello,World 我是服务端"+parmMap, CharsetUtil.UTF_8);
             FullHttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK,content);
             response.headers().set(HttpHeaderNames.CONTENT_TYPE,"text/plain;charset=UTF-8");
             response.headers().set(HttpHeaderNames.CONTENT_LENGTH,content.readableBytes());//长度
