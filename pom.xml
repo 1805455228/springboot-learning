@@ -18,18 +18,34 @@
         <java.version>1.8</java.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+    <!--dependencyManagement 方式：子pom不会自动使用父pom中的jar包，这时如果子pom想使用的话，就要给出groupId和artifactId，无需给出version-->
+    <dependencyManagement>
+        <dependencies>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>sp-01-hello</module>
+        <module>sp-02-servlet</module>
+        <module>sp-03-devtools</module>
+        <module>sp-04-mybatis-plus</module>
+        <module>sp-05-swagger2</module>
+        <module>sp-06-thymeleaf</module>
+        <module>sp-07-springsecurity</module>
+        <module>sp-08-netty</module>
+        <module>sp-09-redis</module>
+        <module>sp-10-rabbitmq</module>
+        <module>sp-11-rabbitmq-test</module>
+        <module>sp-12-fastdfs</module>
+        <module>sp-13-transactional</module>
+        <module>sp-14-elasticsearch</module>
+        <module>sp-15-mycat</module>
+
+
+
+    </modules>
 
     <build>
         <plugins>

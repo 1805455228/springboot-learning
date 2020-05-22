@@ -28,11 +28,15 @@
 
 * 13、springboot 事务使用
 
+* 14、springboot 整合ElasticSearch（搜索、全文检索）类似传统的solr
+
+* springboot 整合mycat
+
 ### 学习任务计划
 
 ---
 
-* springboot 整合ElasticSearch（搜索、全文检索）
+* springboot 整合ElasticSearch（搜索、全文检索）类似传统的solr
 
 * springboot 多数据源
 
