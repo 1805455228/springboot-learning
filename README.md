@@ -1,6 +1,6 @@
 
 
-### SpringBoot学习笔记
+### 以SpringBoot为基础扩展
 
 * 1、springboot HelloWorld
 
@@ -30,9 +30,9 @@
 
 * 14、springboot 整合ElasticSearch（搜索、全文检索）类似传统的solr
 
-* springboot 整合mycat
+* 15、springboot 整合mycat
 
-### 学习任务计划
+### 任务计划
 
 ---
 
