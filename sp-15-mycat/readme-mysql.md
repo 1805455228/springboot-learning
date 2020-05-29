@@ -173,7 +173,7 @@ binlog_ignore_db=库名列表 //不允许同步的库
 replicate_do_db=库名列表 //指定只同步的库
 replicate_ignore_db=库名列表 //指定不同步的库
 
-* 主库配置 互为主从(192.168.27.35) --- mysql
+* 主库配置 互为主从(192.168.27.35) --- mysql5.6
 ```roomsql
 [mysqld]
 # 主从复制
