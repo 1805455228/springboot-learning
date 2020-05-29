@@ -173,5 +173,85 @@ binlog_ignore_db=库名列表 //不允许同步的库
 replicate_do_db=库名列表 //指定只同步的库
 replicate_ignore_db=库名列表 //指定不同步的库
 
+* 主库配置 互为主从(192.168.27.35) --- mysql
+```roomsql
+[mysqld]
+# 主从复制
+log_bin=mysql-master1-bin
+log_bin-index=mysql-master1-bin.index
+server_id=1
+# binlog-do-db=cloud_course
+# binlog-do-db=db1
+innodb_flush_log_at_trx_commit = 1
+sync_binlog = 1
+expire_logs_days=7
 
+basedir = D:\ProgramFile\mysql5.6
+datadir = D:\ProgramFile\mysql5.6\data
+
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES 
+```
+
+* 从库配置 互为主从（192.168.48.141） --- mariadb
+```roomsql
+[mariadb]
+server-id=140
+# replicate-do-db=cloud_course
+# replicate-do-db=db1
+## 开启二进制日志功能，以备Slave作为其它Slave的Master时使用
+log-bin=mysql-slave1-bin
+expire_logs_days=7
+
+```
+
+
+* 从库开启主从复制
+
+```roomsql
+# 从库的从库设置
+show slave status;
+
+stop slave
+
+start slave
+
+reset slave;
+
+change master to master_host='192.168.27.35', master_user='xuan', master_password='123456',master_log_file='mysql-master1-bin.000008', master_log_pos=120;
+
+show master status;
+
+```
+
+* 主库开启主从复制
+
+```roomsql
+show master status;
+
+show processlist;
+
+# 互为主从
+
+# 主库的从库设置
+show slave status;
+
+stop slave;
+
+start slave;
+
+reset slave;
+
+change master to master_host='192.168.48.141', master_user='xuan', master_password='Aa123456!',master_log_file='mysql-slave1-bin.000011', master_log_pos=1366;
+
+```
+
+#### mysql互为主从模式测试：
+
+* 1、主库创建数据表、删除数据表、数据表的数据增删改查，从库随之发生变化
+
+* 2、从库创建数据表、删除数据表、数据表的数据增删改查，主库随之发生变化
+
+* 3、主库重启
+
+* 4、从库重启
 
