@@ -36,7 +36,7 @@ public class Task {
                     , str.getBytes("utf-8"));
             SendResult result = producer.send(msg);
             if (result.getSendStatus() == SendStatus.SEND_OK) {
-                System.out.println("消息发送成功");
+                System.out.println("消息发送成功，你大爷已经更新版本，赶紧去下载新系统吧！");
             }
         } catch (Exception e) {
             e.printStackTrace();

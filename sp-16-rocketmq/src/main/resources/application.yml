@@ -1,0 +1,21 @@
+server:
+  port: 8094
+  servlet:
+    context-path: /rocketmq
+    session:
+      timeout: 86400 # session超时时间为3600秒 2小时7200 1天86400
+
+spring:
+  application:
+    name: mq-admin
+  profiles:
+    active: dev #配置文件类型
+  main:
+    allow-bean-definition-overriding: true
+
+
+
+
+
+
+
