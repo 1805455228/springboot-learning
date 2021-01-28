@@ -13,7 +13,7 @@ mqnamesrv.cmd
 - 2、执行mqbroker指令
 我们再开一个cmd命令行，执行如下指令，切记不要关闭窗口：
 
-.\mqbroker -n 127.0.0.1:9876
+.\mqbroker -n 127.0.0.1:9876 autoCreateTopicEnable=true
 
 
 注意：假如弹出提示框提示‘错误: 找不到或无法加载主类 xxxxxx’。打开runbroker.cmd，然后将"%CLASSPATH%"加上英文双引号。再运行;

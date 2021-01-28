@@ -1,5 +1,5 @@
 server:
-  port: 8094
+  port: 8017
   servlet:
     context-path: /rocketmq
     session:
@@ -7,15 +7,8 @@ server:
 
 spring:
   application:
-    name: mq-admin
+    name: mq-boot
   profiles:
     active: dev
   main:
     allow-bean-definition-overriding: true
-
-
-
-
-
-
-

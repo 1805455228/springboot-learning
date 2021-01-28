@@ -36,6 +36,11 @@
 
 ### 15、springboot 整合mycat
 
+### 16、springboot 整合rocketmq  4.3.0版本
+
+### 17、springboot 整合rocketmq  4.6.0版本 rocketmq-boot插件
+
+
 
 ### 任务计划
 

@@ -43,7 +43,7 @@
         <module>sp-14-elasticsearch</module>
         <module>sp-15-mycat</module>
         <module>sp-16-rocketmq</module>
-
+        <module>sp-17-bootRocketmq</module>
 
     </modules>
 
