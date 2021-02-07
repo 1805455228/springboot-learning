@@ -1,0 +1,21 @@
+server:
+  port: 8094
+  servlet:
+    context-path: /rocketmq
+    session:
+      timeout: 86400 # session
+
+spring:
+  application:
+    name: mq-admin
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+
+
+
+
+
+
+

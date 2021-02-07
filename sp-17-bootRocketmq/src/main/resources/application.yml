@@ -1,0 +1,14 @@
+server:
+  port: 8017
+  servlet:
+    context-path: /rocketmq
+    session:
+      timeout: 86400 # session
+
+spring:
+  application:
+    name: mq-boot
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true

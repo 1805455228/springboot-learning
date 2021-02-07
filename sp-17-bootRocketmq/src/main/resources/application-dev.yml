@@ -1,0 +1,10 @@
+# rocketmq
+rocketmq:
+  name-server: 127.0.0.1:9876 # 集群192.168.64.151:9876;192.168.64.152:9876
+  producer:
+    group: producer-demo1 #自定义的组名称
+    send-message-timeout: 3000  #消息发送超时时长
+    retry-times-when-send-failed: 3 # 同步发送消息失败重试次数，默认2
+    retry-times-when-send-async-failed: 3 # 异步发送消息失败重试次数，默认2
+
+

@@ -1,5 +1,6 @@
 package com.hins.app.sp04mybatisplus.config;
 
+import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
@@ -34,6 +35,15 @@ public class MybatisPlusConfig {
         PerformanceInterceptor page = new PerformanceInterceptor();
         page.setFormat(true);
         return page;
+    }
+
+    /**
+     * 开启乐观锁
+     * @return
+     */
+    @Bean
+    public OptimisticLockerInterceptor optimisticLockerInterceptor() {
+        return new OptimisticLockerInterceptor();
     }
 
 }
