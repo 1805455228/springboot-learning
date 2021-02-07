@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>服务端推算技术SSE(模拟股票行情)</h2>
+
+    <div>上证指数：<p id="stockData"></p></div>
+<script>
+    if(!!window.EventSource){//EventSource是SSE客户端，此时说明浏览器支持EventSource对象
+        var source = new EventSource("sse/stock");//
+        var s="";
+        //添加客户端监听
+        console.log(source.readyState);
+        source.onmessage = function (evt) {
+            console.log(evt);
+            document.getElementById("stockData").innerText = evt.data;
+        };
+
+        source.onopen = function (evt) {
+            console.log(evt);
+            console.log("连接打开");
+        };
+
+        source.onerror = function (evt) {
+            console.log("错误");
+            //console.log(evt);
+        };
+    }else{
+        console.log("你的浏览器不支持SSE");
+    }
+</script>
+</body>
+</html>

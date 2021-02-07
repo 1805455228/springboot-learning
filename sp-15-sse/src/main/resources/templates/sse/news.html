@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>服务端推算技术SSE（模拟热点新闻推送）</h2>
+    <div>通知：<p id="news"></p></div>
+    <script>
+        if(!!window.EventSource){//EventSource是SSE客户端，此时说明浏览器支持EventSource对象
+            var source = new EventSource("sse/news");//
+            var s="";
+            //添加客户端监听
+            console.log(source.readyState);
+            source.onmessage = function (evt) {
+                console.log(evt);
+                document.getElementById("news").innerText = evt.data;
+            };
+
+
+            source.onopen = function (evt) {
+                console.log(evt);
+                console.log("连接打开");
+            };
+
+            source.onerror = function (evt) {
+                console.log("错误");
+                //console.log(evt);
+            };
+        }else{
+            console.log("你的浏览器不支持SSE");
+        }
+    </script>
+</body>
+</html>
