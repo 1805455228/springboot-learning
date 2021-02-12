@@ -64,6 +64,22 @@ public class SysUserController {
 
         QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
         IPage<SysUser> page = new Page<>(pageNum,pageSize);
+        wrapper.orderByDesc("create_time");
+        page = sysUserService.page(page,wrapper);
+        return page;
+    }
+
+    /**
+     * @Description: 获取用户列表 分页、排序
+     */
+    @GetMapping("/sort")
+    public Object listUserSort(
+            @RequestParam(required = false) Integer pageNum,
+            @RequestParam(required = false) Integer pageSize) {
+
+        QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
+        wrapper.orderByDesc("create_time");
+        IPage<SysUser> page = new Page<>(pageNum,pageSize);
         page = sysUserService.page(page,wrapper);
         return page;
     }
@@ -79,6 +95,7 @@ public class SysUserController {
 
         QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
         wrapper.like("name","12");
+        wrapper.orderByDesc("create_time");
         IPage<SysUser> page = new Page<>(pageNum,pageSize);
         page = sysUserService.page(page,wrapper);
         return page;
@@ -95,6 +112,7 @@ public class SysUserController {
                            @RequestParam(required = false) Integer pageSize) {
         QueryWrapper<SysUser> wrapper = new QueryWrapper<>();
         wrapper.eq("status","normal");
+        wrapper.orderByDesc("create_time");
         IPage<SysUser> page = new Page<>(pageNum,pageSize);
         //List<SysUser> list = sysUserService.list(wrapper);
         page = sysUserService.page(page,wrapper);

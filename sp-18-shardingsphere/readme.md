@@ -164,9 +164,13 @@ http://localhost:8018/db/bookUser/sysUser/save
 
 * 查询数据
 
-http://localhost:8018/db/bookUser/sysUser/save
+http://localhost:8018/db/bookUser/sysUser/list
+
 
 * 范围查询
 
 
+
 * 模块查询
+
+http://localhost:8018/db/bookUser/sysUser/like
