@@ -2,4 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hins.core.store.mapper.SkuStoreMapper">
 
+
+    <update id="initStoreTables" parameterType="java.util.List">
+        <foreach collection="tableList" item="item" separator=";">
+            CREATE TABLE IF NOT EXISTS ${item} LIKE sku_store
+        </foreach>
+    </update>
 </mapper>

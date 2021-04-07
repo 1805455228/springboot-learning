@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.hins.core.store.entity.SkuStore;
 import com.hins.core.store.service.ISkuStoreService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.http.fileupload.util.LimitedInputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -61,6 +62,16 @@ public class SkuStoreController {
 
 
         skuStoreService.saveOrUpdate(entity);
+
+
+        return "succeess";
+    }
+
+
+    @GetMapping("/initTable")
+    public String initStoreSkuTable(@RequestParam List<String> storeIds){
+
+        skuStoreService.initTables(storeIds);
 
 
         return "succeess";
