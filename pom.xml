@@ -42,8 +42,12 @@
         <module>sp-13-transactional</module>
         <module>sp-14-elasticsearch</module>
         <module>sp-15-mycat</module>
+        <module>sp-15-sse</module>
         <module>sp-16-rocketmq</module>
+        <module>sp-16-websocket</module>
         <module>sp-17-bootRocketmq</module>
+        <module>sp-18-shardingsphere</module>
+        <module>sp-19-shardingJdbc</module>
 
     </modules>
 

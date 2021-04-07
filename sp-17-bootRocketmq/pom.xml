@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sp</groupId>
-	<artifactId>sp-17-rocketmq</artifactId>
+	<artifactId>sp-17-bootRocketmq</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sp-17-bootRocketmq</name>
 	<description>Demo project for Spring Boot</description>

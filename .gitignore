@@ -9,6 +9,8 @@ out
 gen
 .mvn
 .mvn/wrapper
+logs/
+target
 *.iml
 
 ### Example user template template
@@ -19,3 +21,10 @@ gen
 *.iml
 out
 gen
+
+
+logs
+target
+
+
+
