@@ -44,9 +44,9 @@
 
 ### 17、springboot 整合rocketmq  4.6.0版本 rocketmq-boot插件
 
-### 18、springboot 整合ShardingJDBC 
+### 18、springboot 整合ShardingJDBC - demo1 （不支持动态表名）
 
-### 19、springboot 整合ShardingJDBC - demo2
+### 19、springboot 整合ShardingJDBC - demo2 多数据源  mybatis-plus动态表名 
 
 
 ### 任务计划
@@ -54,8 +54,6 @@
 ---
 
 ### springboot 整合ElasticSearch（搜索、全文检索）类似传统的solr
-
-### springboot 多数据源
 
 ### springboot 整合Jpa
 
