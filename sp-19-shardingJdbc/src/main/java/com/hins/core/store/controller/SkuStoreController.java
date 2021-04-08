@@ -2,7 +2,12 @@ package com.hins.core.store.controller;
 
 
 import com.alibaba.druid.support.json.JSONUtils;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.hins.core.config.mybatisplus.ValueTableNameParser;
 import com.hins.core.store.entity.SkuStore;
 import com.hins.core.store.service.ISkuStoreService;
 import lombok.extern.slf4j.Slf4j;
@@ -16,9 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * <p>
@@ -37,34 +40,64 @@ public class SkuStoreController {
     private ISkuStoreService skuStoreService;
 
     @GetMapping("/list")
-    public String getStoreSkuList(@RequestParam String storeId){
-        QueryWrapper<SkuStore> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("store_id",storeId);
-        List<SkuStore> skuList = skuStoreService.list(queryWrapper);
-        skuList.forEach(item ->{
-            log.info("输出结果：{}", JSONUtils.toJSONString(item));
-        });
+    public Object getStoreSkuList(@RequestParam String storeId){
+        try {
+//        QueryWrapper<SkuStore> queryWrapper = new QueryWrapper<>();
+//        queryWrapper.eq("store_id",storeId);
+//        LambdaQueryWrapper<SkuStore> lambdaQuery = Wrappers.<SkuStore>lambdaQuery();
+//        lambdaQuery.eq(SkuStore::getStoreId, storeId);
+//
+//        ValueTableNameParser.setThreadLocalValue(storeId);
+//        List<SkuStore> skuList = skuStoreService.list(lambdaQuery);
+//        skuList.forEach(item ->{
+//            log.info("输出结果：{}", item.toString());
+//        });
 
-        return "succeess";
+            LambdaQueryWrapper<SkuStore> lambdaQuery2 = Wrappers.<SkuStore>lambdaQuery();
+            lambdaQuery2.eq(SkuStore::getStoreId, storeId);
+            IPage<SkuStore> page = new Page<>(1,3);
+            ValueTableNameParser.setThreadLocalValue(storeId);
+            page = skuStoreService.page(page,lambdaQuery2);
+
+
+//        ValueTableNameParser.setThreadLocalValue(storeId);
+//        List<SkuStore> skuList2 = skuStoreService.getListByMap(storeId);
+//        skuList2.forEach(item ->{
+//            log.info("输出结果2：{}", item.toString());
+//        });
+
+            Map<String,Object> result = new HashMap<>();
+            result.put("skuData",page);
+//        result.put("skuList",skuList);
+//        result.put("skuList2",skuList2);
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "查询异常，表不存在"+storeId;
     }
 
     @GetMapping("/add")
     public String addStoreSku(@RequestParam String storeId){
 
-        SkuStore entity = new SkuStore();
-        entity.setSkuId(UUID.randomUUID().toString().replace("-",""));
-        entity.setStoreId(storeId);
-        entity.setPrice(new BigDecimal(30.00));
-        entity.setMbrPrice(new BigDecimal(80.00));
-        entity.setStock(200);
-        entity.setSkuStatus(0);
-        entity.setCreateTime(LocalDateTime.now());
+        try {
+            SkuStore entity = new SkuStore();
+            entity.setSkuId(UUID.randomUUID().toString().replace("-",""));
+            entity.setStoreId(storeId);
+            entity.setPrice(new BigDecimal(30.00));
+            entity.setMbrPrice(new BigDecimal(80.00));
+            entity.setStock(200);
+            entity.setSkuStatus(0);
+            entity.setCreateTime(new Date());
+            ValueTableNameParser.setThreadLocalValue(storeId);
+            skuStoreService.save(entity);
+            return "添加成功"+storeId;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
-        skuStoreService.saveOrUpdate(entity);
-
-
-        return "succeess";
+        return "添加异常，表不存在"+storeId;
     }
 
 

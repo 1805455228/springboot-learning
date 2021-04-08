@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -38,5 +40,14 @@ public class SkuStoreServiceImpl extends ServiceImpl<SkuStoreMapper, SkuStore> i
             log.info("批量初始化库存表: suffixes:{}, count:{}", storeIds, count);
         }
     }
+
+    @Override
+    public List<SkuStore> getListByMap(String storeId){
+        Map<String,Object> params = new HashMap<>();
+        params.put("store_id",storeId);
+        List<SkuStore> list =  skuStoreMapper.selectByMap(params);
+        return list;
+    }
+
 
 }

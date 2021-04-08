@@ -17,4 +17,6 @@ public interface ISkuStoreService extends IService<SkuStore> {
 
     void initTables(List<String> storeIds);
 
+    List<SkuStore> getListByMap(String storeId);
+
 }

@@ -4,8 +4,9 @@ spring:
   datasource:
     # core数据库配置
     core:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/pintea_core?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+      url: jdbc:p6spy:mysql://127.0.0.1:3306/pintea_core?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=GMT%2B8
       password: 123456
       username: root
       druid:
@@ -22,8 +23,9 @@ spring:
         validation-query: SELECT 1 FROM DUAL
     ## order 数据库配置
     order:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/pintea-order?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+      url: jdbc:p6spy:mysql://127.0.0.1:3306/pintea-order?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
       password: 123456
       username: root
       druid:

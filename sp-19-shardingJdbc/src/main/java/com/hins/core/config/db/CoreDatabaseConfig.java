@@ -1,15 +1,26 @@
 package com.hins.core.config.db;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.core.MybatisConfiguration;
+import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.handler.TableNameHandler;
+import com.baomidou.mybatisplus.extension.plugins.inner.DynamicTableNameInnerInterceptor;
+import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
+import com.hins.core.config.mybatisplus.DaysTableNameParser;
+import com.hins.core.config.mybatisplus.IdModTableNameParser;
+import com.hins.core.config.mybatisplus.MybatisPlusConfig;
+import com.hins.core.config.mybatisplus.ValueTableNameParser;
 import com.hins.core.config.shard.ShardPlugin;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +29,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
 
 /**
  * Core数据库配置类
@@ -26,6 +38,9 @@ import javax.sql.DataSource;
 @Configuration
 @MapperScan(basePackages = {"com.hins.core.*.mapper*", "com.hins.core.*.dao*"}, sqlSessionTemplateRef = "coreSqlSessionTemplate")
 public class CoreDatabaseConfig {
+
+    @Autowired
+    private MybatisPlusConfig mybatisPlusConfig;
 
     /**
      * 数据源
@@ -48,7 +63,9 @@ public class CoreDatabaseConfig {
     @Primary
     public SqlSessionFactory masterSqlSessionFactory(@Qualifier("coreDataSource") DataSource dataSource) throws Exception {
         MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();
-        bean.setPlugins(new Interceptor[]{shardPlugin()});
+        Interceptor[] plugins = {mybatisPlusInterceptor()};
+        //bean.setPlugins(new Interceptor[]{shardPlugin()});
+        bean.setPlugins(plugins);
         bean.setDataSource(dataSource);
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/**/*.xml"));
         MybatisConfiguration mybatisConfiguration = new MybatisConfiguration();
@@ -56,6 +73,7 @@ public class CoreDatabaseConfig {
         bean.setConfiguration(mybatisConfiguration);
         return bean.getObject();
     }
+
 
     /**
      * 事务
@@ -90,5 +108,27 @@ public class CoreDatabaseConfig {
         shardPlugin.setTableNames("sku_store|com.hins.core.config.shard.SkuStoreShard");
         return shardPlugin;
     }
+
+    @Bean
+    public MybatisPlusInterceptor mybatisPlusInterceptor() {
+        MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+        //动态表名
+        DynamicTableNameInnerInterceptor dynamicTableNameInnerInterceptor = new DynamicTableNameInnerInterceptor();
+        HashMap<String, TableNameHandler> map = new HashMap<String, TableNameHandler>();
+
+        //这里为不同的表设置对应表名处理器
+        map.put("sku_store", new ValueTableNameParser());
+        //map.put("sku_store", new DaysTableNameParser());
+        //map.put("sku_properties", new IdModTableNameParser(10));
+
+        dynamicTableNameInnerInterceptor.setTableNameHandlerMap(map);
+        interceptor.addInnerInterceptor(dynamicTableNameInnerInterceptor);
+
+        //分页 (分页配置要在动态表名配置之后，否则分页查询时动态表名不生效)
+        PaginationInnerInterceptor paginationInnerInterceptor = new PaginationInnerInterceptor(DbType.MYSQL);
+        interceptor.addInnerInterceptor(paginationInnerInterceptor);
+        return interceptor;
+    }
+
 
 }
