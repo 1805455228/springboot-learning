@@ -5,10 +5,12 @@ import com.baomidou.mybatisplus.core.MybatisConfiguration;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import com.google.common.collect.Lists;
 import com.hins.jdbc.config.mybatisplus.MybatisPlusConfig;
+import com.hins.jdbc.config.shard.HintTableShardingAlgorithm;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.shardingsphere.api.config.sharding.ShardingRuleConfiguration;
 import org.apache.shardingsphere.api.config.sharding.TableRuleConfiguration;
+import org.apache.shardingsphere.api.config.sharding.strategy.HintShardingStrategyConfiguration;
 import org.apache.shardingsphere.api.config.sharding.strategy.InlineShardingStrategyConfiguration;
 import org.apache.shardingsphere.core.rule.ShardingRule;
 import org.apache.shardingsphere.shardingjdbc.jdbc.core.datasource.ShardingDataSource;
@@ -103,6 +105,13 @@ public class OrderDatabaseConfig {
         tableRuleConfig3.setTableShardingStrategyConfig(
                 new InlineShardingStrategyConfiguration("member_id", "order_item_${member_id % 2}"));
 
+        //Hint 直接路由（强制路由）
+        TableRuleConfiguration tableRuleConfig4 = new TableRuleConfiguration("order_cancel_apply", "dsnode1.order_cancel_apply_${0..1}");
+//        tableRuleConfig4.setTableShardingStrategyConfig(
+//                new InlineShardingStrategyConfiguration("member_id", "order_cancel_apply_${member_id % 2}"));
+
+        tableRuleConfig4.setTableShardingStrategyConfig(
+                new HintShardingStrategyConfiguration(new HintTableShardingAlgorithm()));
         List<TableRuleConfiguration> tableRuleConfigurations = Lists.newArrayList(tableRuleConfig3);
 
         return tableRuleConfigurations;
