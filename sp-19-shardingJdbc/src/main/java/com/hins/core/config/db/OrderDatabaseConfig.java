@@ -70,7 +70,7 @@ public class OrderDatabaseConfig {
 
         //绑定分片表，主要用来路由
         List<String> bindingTableGroups = Lists.newArrayList(
-                "order_cancel_apply", "order_info", "order_item", "order_return", "order_return_item");
+                 "order_item");
         shardingRuleConfig.getBindingTableGroups().addAll(bindingTableGroups);
 
         Properties prop = new Properties();
@@ -91,27 +91,12 @@ public class OrderDatabaseConfig {
      */
     private List<TableRuleConfiguration> getTableRuleConfigurationListForTest() {
 
-        TableRuleConfiguration tableRuleConfig1 = new TableRuleConfiguration("order_cancel_apply", "ds.order_cancel_apply_${0..1}");
-        tableRuleConfig1.setTableShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration("member_id", "order_cancel_apply_${member_id % 2}"));
-
-        TableRuleConfiguration tableRuleConfig2 = new TableRuleConfiguration("order_info", "ds.order_info_${0..1}");
-        tableRuleConfig2.setTableShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration("member_id", "order_info_${member_id % 2}"));
 
         TableRuleConfiguration tableRuleConfig3 = new TableRuleConfiguration("order_item", "ds.order_item_${0..1}");
         tableRuleConfig3.setTableShardingStrategyConfig(
                 new InlineShardingStrategyConfiguration("member_id", "order_item_${member_id % 2}"));
 
-        TableRuleConfiguration tableRuleConfig4 = new TableRuleConfiguration("order_return", "ds.order_return_${0..1}");
-        tableRuleConfig4.setTableShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration("member_id", "order_return_${member_id % 2}"));
-
-        TableRuleConfiguration tableRuleConfig5 = new TableRuleConfiguration("order_return_item", "ds.order_return_item_${0..1}");
-        tableRuleConfig5.setTableShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration("member_id", "order_return_item_${member_id % 2}"));
-
-        List<TableRuleConfiguration> tableRuleConfigurations = Lists.newArrayList(tableRuleConfig1, tableRuleConfig2, tableRuleConfig3, tableRuleConfig4, tableRuleConfig5);
+        List<TableRuleConfiguration> tableRuleConfigurations = Lists.newArrayList(tableRuleConfig3);
 
         return tableRuleConfigurations;
     }
@@ -122,27 +107,12 @@ public class OrderDatabaseConfig {
      * @return
      */
     private List<TableRuleConfiguration> getTableRuleConfigurationListForProd() {
-        TableRuleConfiguration tableRuleConfig1 = new TableRuleConfiguration("order_cancel_apply", "ds.order_cancel_apply_${0..9}");
-        tableRuleConfig1.setTableShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration("member_id", "order_cancel_apply_${member_id % 10}"));
-
-        TableRuleConfiguration tableRuleConfig2 = new TableRuleConfiguration("order_info", "ds.order_info_${0..9}");
-        tableRuleConfig2.setTableShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration("member_id", "order_info_${member_id % 10}"));
 
         TableRuleConfiguration tableRuleConfig3 = new TableRuleConfiguration("order_item", "ds.order_item_${0..9}");
         tableRuleConfig3.setTableShardingStrategyConfig(
                 new InlineShardingStrategyConfiguration("member_id", "order_item_${member_id % 10}"));
 
-        TableRuleConfiguration tableRuleConfig4 = new TableRuleConfiguration("order_return", "ds.order_return_${0..9}");
-        tableRuleConfig4.setTableShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration("member_id", "order_return_${member_id % 10}"));
-
-        TableRuleConfiguration tableRuleConfig5 = new TableRuleConfiguration("order_return_item", "ds.order_return_item_${0..9}");
-        tableRuleConfig4.setTableShardingStrategyConfig(
-                new InlineShardingStrategyConfiguration("member_id", "order_return_item_${member_id % 10}"));
-
-        List<TableRuleConfiguration> tableRuleConfigurations = Lists.newArrayList(tableRuleConfig1, tableRuleConfig2, tableRuleConfig3, tableRuleConfig4, tableRuleConfig5);
+        List<TableRuleConfiguration> tableRuleConfigurations = Lists.newArrayList(tableRuleConfig3);
 
         return tableRuleConfigurations;
     }
@@ -155,7 +125,6 @@ public class OrderDatabaseConfig {
      * @throws Exception
      */
     @Bean(name = "orderSqlSessionFactory")
-    @Primary
     public SqlSessionFactory masterSqlSessionFactory(@Qualifier("orderDataSource") DataSource dataSource) throws Exception {
         MybatisSqlSessionFactoryBean bean = new MybatisSqlSessionFactoryBean();
         bean.setDataSource(dataSource);

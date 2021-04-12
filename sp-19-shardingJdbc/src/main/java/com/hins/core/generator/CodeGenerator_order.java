@@ -22,7 +22,7 @@ import java.util.Scanner;
  * @date 2019-07-06 11:39
  */
 // 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
-public class CodeGenerator_qixuan {
+public class CodeGenerator_order {
 
     /**
      * <p>
@@ -49,7 +49,7 @@ public class CodeGenerator_qixuan {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectName = "/com.hins.core"; // 子模块名称 （可选）
+        String projectName = "/sp-19-shardingJdbc"; // 子模块名称 （可选）
         final String projectPath = System.getProperty("user.dir") + projectName;
 
         gc.setOutputDir(projectPath + "/src/main/java");
@@ -60,7 +60,7 @@ public class CodeGenerator_qixuan {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/pintea_core?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC");
+        dsc.setUrl("jdbc:mysql://localhost:3306/pintea-order?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
@@ -78,7 +78,7 @@ public class CodeGenerator_qixuan {
         // 包配置
         final PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.yingxin.arvr.core");
+        pc.setParent("com.hins.core");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -115,7 +115,7 @@ public class CodeGenerator_qixuan {
 //            @Override
 //            public String outputFile(TableInfo tableInfo) {
 //                // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-//                return projectPath + "/src/main/java/com/yingxin/arvr/admin/"+ pc.getModuleName()
+//                return projectPath + "/src/main/java/com/hins/core/admin/"+ pc.getModuleName()
 //                        + "/controller/" + tableInfo.getControllerName()+".java";
 //            }
 //        });
@@ -154,7 +154,7 @@ public class CodeGenerator_qixuan {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.yingxin.arvr.common.BaseEntity");
+        strategy.setSuperEntityClass("com.his.core.common.BaseEntity");
         strategy.setSuperEntityColumns("id","create_time","create_by","modify_time","modify_by","status");
         strategy.setEntitySerialVersionUID(true);
         // 写于父类中的公共字段
@@ -162,7 +162,7 @@ public class CodeGenerator_qixuan {
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 公共父类
-        strategy.setSuperControllerClass("com.yingxin.arvr.common.BaseController");
+        strategy.setSuperControllerClass("com.hins.core.common.BaseController");
 
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         strategy.setControllerMappingHyphenStyle(true);
