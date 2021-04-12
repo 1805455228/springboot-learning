@@ -1,4 +1,4 @@
-package com.hins.core;
+package com.hins.jdbc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

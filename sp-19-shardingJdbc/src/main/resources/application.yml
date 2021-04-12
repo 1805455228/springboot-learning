@@ -9,6 +9,6 @@ spring:
   application:
     name: sp-19-shardingJdbc
   profiles:
-    active: dev
+    active: ds-dev
   main:
     allow-bean-definition-overriding: true

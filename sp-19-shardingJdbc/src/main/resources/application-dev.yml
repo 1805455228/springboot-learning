@@ -67,7 +67,7 @@ logging:
 mybatis-plus:
   mapper-locations: classpath:mapper/**/*.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.hins.core.*.entity
+  typeAliasesPackage: com.hins.jdbc.*.entity
   global-config:
     db-config:
       #刷新mapper 调试神器

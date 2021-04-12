@@ -21,6 +21,9 @@ http://localhost:8018/db/bookUser/sysUser/list
 http://localhost:8018/db/bookUser/sysUser/like
 
 
+## 多数据源
+
+* 不同的数据源配置不佟的mapper扫描位置，然后需要哪一个数据源就注入哪一个mapper接口即可
 
 ## 数据同步
 
