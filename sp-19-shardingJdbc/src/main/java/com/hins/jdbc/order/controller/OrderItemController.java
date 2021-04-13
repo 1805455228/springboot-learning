@@ -43,6 +43,7 @@ public class OrderItemController {
                 if(null != memberId){
                     lambdaQuery2.eq(OrderItem::getMemberId,memberId);
                 }
+                lambdaQuery2.lt(OrderItem::getPrice,4);
                 IPage<OrderItem> page = new Page<>(1,5);
                 page = orderItemService.page(page,lambdaQuery2);
 
