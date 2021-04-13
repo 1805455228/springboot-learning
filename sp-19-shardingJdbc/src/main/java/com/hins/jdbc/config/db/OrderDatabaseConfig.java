@@ -59,7 +59,6 @@ public class OrderDatabaseConfig {
     @ConfigurationProperties(prefix = "spring.datasource.order")
     public DataSource druidDataSource() {
         return DataSourceBuilder.create().type(DruidDataSource.class).build();
-        //return  new DruidDataSource();
     }
 
     /**
@@ -106,12 +105,12 @@ public class OrderDatabaseConfig {
                 new InlineShardingStrategyConfiguration("member_id", "order_item_${member_id % 2}"));
 
         //Hint 直接路由（强制路由）
-        TableRuleConfiguration tableRuleConfig4 = new TableRuleConfiguration("order_cancel_apply", "dsnode1.order_cancel_apply_${0..1}");
+//        TableRuleConfiguration tableRuleConfig4 = new TableRuleConfiguration("order_cancel_apply", "dsnode1.order_cancel_apply_${0..1}");
 //        tableRuleConfig4.setTableShardingStrategyConfig(
 //                new InlineShardingStrategyConfiguration("member_id", "order_cancel_apply_${member_id % 2}"));
 
-        tableRuleConfig4.setTableShardingStrategyConfig(
-                new HintShardingStrategyConfiguration(new HintTableShardingAlgorithm()));
+//        tableRuleConfig4.setTableShardingStrategyConfig(
+//                new HintShardingStrategyConfiguration(new HintTableShardingAlgorithm()));
         List<TableRuleConfiguration> tableRuleConfigurations = Lists.newArrayList(tableRuleConfig3);
 
         return tableRuleConfigurations;

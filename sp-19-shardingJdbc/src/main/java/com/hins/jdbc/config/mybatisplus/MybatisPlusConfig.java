@@ -10,6 +10,8 @@ import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 
 
+import com.baomidou.mybatisplus.extension.plugins.handler.TableNameHandler;
+import com.baomidou.mybatisplus.extension.plugins.inner.DynamicTableNameInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
@@ -22,10 +24,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import java.util.Calendar;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author qixuan.chen
@@ -38,6 +37,14 @@ public class MybatisPlusConfig {
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
+//        // 添加动态表名插件 (元数据参数解析已被mybatis-plus3.4版后放弃，应为容易出错，统一使用threadLocal的方式传参数)
+//        DynamicTableNameInnerInterceptor dynamicTableNameInnerInterceptor=new DynamicTableNameInnerInterceptor();
+//        TableNameHandler tableNameHandler=new MyTableNameHandler();
+//        Map<String, TableNameHandler> tableNameHandlerMap=new HashMap<>();
+//        tableNameHandlerMap.put("order_cancel_apply",tableNameHandler); // order_tbl表配置动态表名插件
+//        dynamicTableNameInnerInterceptor.setTableNameHandlerMap(tableNameHandlerMap);
+//        interceptor.addInnerInterceptor(dynamicTableNameInnerInterceptor);
+
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
         return interceptor;
     }
@@ -94,23 +101,6 @@ public class MybatisPlusConfig {
 //        return paginationInterceptor;
 //    }
 
-
-
-    /**
-     * 获取参数值
-     */
-//    private Object getParamValue(String title, MetaObject metaObject){
-//        //获取参数
-//        Object originalObject = metaObject.getOriginalObject();
-//        JSONObject originalObjectJSON = JSON.parseObject(JSON.toJSONString(originalObject));
-//        JSONObject boundSql = originalObjectJSON.getJSONObject("boundSql");
-//        try {
-//            JSONObject parameterObject = boundSql.getJSONObject("parameterObject");
-//            return parameterObject.get(title);
-//        }catch (Exception e) {
-//            return null;
-//        }
-//    }
 
     /**
      * SQL执行分析日志

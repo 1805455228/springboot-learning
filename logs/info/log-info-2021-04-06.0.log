@@ -1,0 +1,294 @@
+2021-04-06 17:34:42.488 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 4016 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 17:34:42.492 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 17:34:44.009 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 17:34:44.025 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 17:34:44.026 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 17:34:44.027 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 17:34:44.149 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 17:34:44.150 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1294 ms
+2021-04-06 17:34:44.363 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-0} closing ...
+2021-04-06 17:34:44.367 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 17:34:44.392 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 17:41:31.216 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 13144 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 17:41:31.220 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 17:41:32.610 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 17:41:32.622 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 17:41:32.623 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 17:41:32.623 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 17:41:32.701 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 17:41:32.702 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1158 ms
+2021-04-06 17:41:32.903 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-0} closing ...
+2021-04-06 17:41:32.906 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 17:41:32.927 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 17:43:02.096 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 8392 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 17:43:02.101 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 17:43:03.446 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 17:43:03.457 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 17:43:03.458 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 17:43:03.458 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 17:43:03.540 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 17:43:03.541 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1170 ms
+2021-04-06 17:43:03.730 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-0} closing ...
+2021-04-06 17:43:03.733 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 17:43:03.755 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 17:44:26.405 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 6596 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 17:44:26.410 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 17:44:27.783 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 17:44:27.794 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 17:44:27.795 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 17:44:27.795 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 17:44:27.869 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 17:44:27.869 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1187 ms
+2021-04-06 17:44:28.047 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-0} closing ...
+2021-04-06 17:44:28.051 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 17:44:28.071 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 17:45:46.471 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 11960 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 17:45:46.476 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 17:45:47.832 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 17:45:47.843 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 17:45:47.844 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 17:45:47.844 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 17:45:47.917 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 17:45:47.917 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1173 ms
+2021-04-06 17:45:48.204 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 17:45:48.780 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 17:45:48.979 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 17:45:48.979 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 17:45:48.985 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 17:45:48.988 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 17:45:48.999 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 17:48:06.079 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 12480 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 17:48:06.083 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 17:48:07.347 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 17:48:07.357 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 17:48:07.358 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 17:48:07.358 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 17:48:07.435 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 17:48:07.435 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1093 ms
+2021-04-06 17:48:07.700 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 17:48:08.267 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 17:48:08.469 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 17:48:08.469 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 17:48:08.475 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 17:48:08.478 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 17:48:08.490 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 17:49:37.609 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 4960 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 17:49:37.614 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 17:49:38.918 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 17:49:38.928 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 17:49:38.929 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 17:49:38.930 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 17:49:39.003 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 17:49:39.003 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1117 ms
+2021-04-06 17:49:39.268 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 17:49:39.839 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 17:49:40.048 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 17:49:40.049 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 17:49:40.054 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 17:49:40.058 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 17:49:40.069 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 17:51:35.384 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 460 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 17:51:35.401 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 17:51:36.559 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 17:51:36.569 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 17:51:36.570 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 17:51:36.571 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 17:51:36.645 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 17:51:36.645 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1013 ms
+2021-04-06 17:51:36.912 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 17:51:37.411 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 17:51:37.575 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 17:51:37.576 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 17:51:37.580 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 17:51:37.583 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 17:51:37.593 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 17:54:13.906 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 3544 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 17:54:13.910 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 17:54:15.134 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 17:54:15.143 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 17:54:15.143 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 17:54:15.144 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 17:54:15.216 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 17:54:15.216 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1044 ms
+2021-04-06 17:54:15.476 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 17:54:15.968 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 17:54:16.144 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 17:54:16.145 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 17:54:16.149 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 17:54:16.153 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 17:54:16.164 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 18:00:09.183 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 848 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 18:00:09.187 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 18:00:10.527 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 18:00:10.537 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:00:10.538 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 18:00:10.539 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 18:00:10.613 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 18:00:10.613 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1169 ms
+2021-04-06 18:00:10.878 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 18:00:11.449 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:00:11.657 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:00:11.657 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 18:00:11.662 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 18:00:11.666 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 18:00:11.679 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 18:00:29.478 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 12740 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 18:00:29.482 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 18:00:30.585 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 18:00:30.595 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:00:30.595 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 18:00:30.596 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 18:00:30.659 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 18:00:30.660 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 951 ms
+2021-04-06 18:00:30.891 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 18:00:31.363 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:00:31.555 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:00:31.556 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 18:00:31.560 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 18:00:31.563 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 18:00:31.575 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 18:01:17.126 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 7152 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 18:01:17.130 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 18:01:18.368 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 18:01:18.379 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:01:18.380 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 18:01:18.380 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 18:01:18.453 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 18:01:18.453 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1100 ms
+2021-04-06 18:01:18.735 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 18:01:19.303 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:01:19.515 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:01:19.516 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 18:01:19.521 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 18:01:19.525 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 18:01:19.536 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 18:03:06.905 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 10640 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 18:03:06.908 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 18:03:08.172 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 18:03:08.184 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:03:08.185 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 18:03:08.185 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 18:03:08.262 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 18:03:08.263 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1121 ms
+2021-04-06 18:03:08.543 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 18:03:09.175 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:03:09.412 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:03:09.412 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 18:03:09.417 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 18:03:09.421 INFO  org.apache.catalina.core.StandardService Line:173 - Stopping service [Tomcat]
+2021-04-06 18:03:09.432 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener Line:136 - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-04-06 18:04:38.801 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 7612 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 18:04:38.804 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 18:04:39.946 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 18:04:39.955 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:04:39.956 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 18:04:39.957 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 18:04:40.023 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 18:04:40.024 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1000 ms
+2021-04-06 18:04:40.268 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 18:04:40.792 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:04:41.004 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:04:41.025 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-06 18:04:41.035 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 2.853 seconds (JVM running for 3.462)
+2021-04-06 18:06:44.092 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-06 18:06:44.093 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-06 18:06:44.094 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-06 18:22:13.367 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:22:13.368 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 18:22:13.373 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 18:22:17.908 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 8604 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 18:22:17.911 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 18:22:19.143 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 18:22:19.155 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:22:19.156 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 18:22:19.156 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 18:22:19.230 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 18:22:19.230 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1062 ms
+2021-04-06 18:22:19.507 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 18:22:20.046 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:22:20.276 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:22:20.296 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-06 18:22:20.308 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 3.031 seconds (JVM running for 3.63)
+2021-04-06 18:22:32.803 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-06 18:22:32.803 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-06 18:22:32.804 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 0 ms
+2021-04-06 18:22:59.617 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:22:59.618 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 18:22:59.622 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 18:23:02.641 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 11396 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 18:23:02.646 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 18:23:03.832 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 18:23:03.841 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:23:03.841 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 18:23:03.842 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 18:23:03.910 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 18:23:03.910 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1001 ms
+2021-04-06 18:23:04.178 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 18:23:04.720 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:23:04.969 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:23:04.996 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-06 18:23:05.008 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 3.017 seconds (JVM running for 3.573)
+2021-04-06 18:23:23.095 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-06 18:23:23.096 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-06 18:23:23.097 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-06 18:45:42.506 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:45:42.506 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 18:45:42.512 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 18:45:50.044 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 11628 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 18:45:50.048 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 18:45:51.374 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 18:45:51.385 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:45:51.386 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 18:45:51.386 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 18:45:51.461 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 18:45:51.462 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1139 ms
+2021-04-06 18:45:51.750 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 18:45:52.331 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:45:52.584 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:45:52.608 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-06 18:45:52.621 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 3.336 seconds (JVM running for 4.085)
+2021-04-06 18:49:14.694 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:49:14.695 INFO  com.alibaba.druid.pool.DruidDataSource Line:1885 - {dataSource-1} closing ...
+2021-04-06 18:49:14.702 INFO  com.alibaba.druid.pool.DruidDataSource Line:1955 - {dataSource-1} closed
+2021-04-06 18:49:17.903 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 8308 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-06 18:49:17.907 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: core-dev
+2021-04-06 18:49:19.121 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-06 18:49:19.130 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:49:19.131 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-06 18:49:19.131 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-06 18:49:19.204 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-06 18:49:19.204 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1051 ms
+2021-04-06 18:49:19.473 INFO  com.alibaba.druid.pool.DruidDataSource Line:1002 - {dataSource-1} inited
+2021-04-06 18:49:20.029 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-06 18:49:20.263 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-06 18:49:20.282 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-06 18:49:20.292 INFO  com.hins.core.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 3.03 seconds (JVM running for 3.636)
+2021-04-06 18:49:44.814 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-06 18:49:44.815 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-06 18:49:44.818 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 2 ms

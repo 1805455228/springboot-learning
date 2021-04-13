@@ -1,0 +1,1202 @@
+2021-04-13 09:11:30.370 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 3676 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:11:30.375 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:11:32.001 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:11:32.001 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:11:32.001 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:11:33.477 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:11:33.592 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:11:33.593 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 2951 ms
+2021-04-13 09:11:34.677 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:11:34.970 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:11:34.972 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:11:34.988 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:11:35.022 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:11:35.139 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 166 milliseconds.
+2021-04-13 09:11:35.482 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:11:35.850 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:11:35.874 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:11:35.885 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 6.301 seconds (JVM running for 7.159)
+2021-04-13 09:12:21.359 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 09:12:21.360 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 09:12:21.361 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 09:15:30.385 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:15:30.386 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:15:30.394 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:15:30.395 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:15:30.396 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:15:35.469 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 10296 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:15:35.473 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:15:36.871 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:15:36.880 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:15:36.881 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:15:36.881 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:15:36.959 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:15:36.959 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1244 ms
+2021-04-13 09:15:37.956 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:15:38.199 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:15:38.201 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:15:38.215 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:15:38.450 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:15:38.757 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 556 milliseconds.
+2021-04-13 09:15:39.064 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:15:39.402 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:15:39.421 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:15:39.431 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 4.626 seconds (JVM running for 5.261)
+2021-04-13 09:15:54.677 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 09:15:54.678 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 09:15:54.679 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 09:16:18.275 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:16:18.276 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:16:18.283 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:16:18.284 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:16:18.284 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:16:23.189 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 12456 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:16:23.193 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:16:24.692 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:16:24.704 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:16:24.705 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:16:24.705 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:16:24.808 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:16:24.808 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1311 ms
+2021-04-13 09:16:25.873 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:16:26.121 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:16:26.124 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:16:26.142 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:16:26.178 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:16:26.322 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 198 milliseconds.
+2021-04-13 09:16:26.628 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:16:26.925 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:16:26.951 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:16:26.964 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 4.515 seconds (JVM running for 5.225)
+2021-04-13 09:16:36.100 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 09:16:36.101 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 09:16:36.102 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 09:16:36.893 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT COUNT(1) FROM order_item
+2021-04-13 09:16:36.894 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@3d400af3, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@4762d67f), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@4762d67f, projectionsContext=ProjectionsContext(startIndex=7, stopIndex=14, distinctRow=false, projections=[AggregationProjection(type=COUNT, innerExpression=(1), alias=Optional.empty, derivedAggregationProjections=[], index=-1)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@4f68c053, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@5859f397, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@65736dfd, containsSubquery=false)
+2021-04-13 09:16:36.894 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_item_0
+2021-04-13 09:16:36.894 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_item_1
+2021-04-13 09:16:36.980 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item LIMIT ?
+2021-04-13 09:16:36.981 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@103fc66e, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@34482691), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@34482691, projectionsContext=ProjectionsContext(startIndex=8, stopIndex=256, distinctRow=false, projections=[ColumnProjection(owner=null, name=order_id, alias=Optional.empty), ColumnProjection(owner=null, name=spu_id, alias=Optional.empty), ColumnProjection(owner=null, name=spu_name, alias=Optional.empty), ColumnProjection(owner=null, name=sku_id, alias=Optional.empty), ColumnProjection(owner=null, name=sku_name, alias=Optional.empty), ColumnProjection(owner=null, name=sku_pic, alias=Optional.empty), ColumnProjection(owner=null, name=price, alias=Optional.empty), ColumnProjection(owner=null, name=real_amount, alias=Optional.empty), ColumnProjection(owner=null, name=coupon_code, alias=Optional.empty), ColumnProjection(owner=null, name=coupon_amount, alias=Optional.empty), ColumnProjection(owner=null, name=promotion_amount, alias=Optional.empty), ColumnProjection(owner=null, name=quantity, alias=Optional.empty), ColumnProjection(owner=null, name=weight, alias=Optional.empty), ColumnProjection(owner=null, name=first_category_id, alias=Optional.empty), ColumnProjection(owner=null, name=first_category_name, alias=Optional.empty), ColumnProjection(owner=null, name=second_category_id, alias=Optional.empty), ColumnProjection(owner=null, name=second_category_name, alias=Optional.empty), ColumnProjection(owner=null, name=bar_code, alias=Optional.empty), ColumnProjection(owner=null, name=update_time, alias=Optional.empty), ColumnProjection(owner=null, name=member_id, alias=Optional.empty), ColumnProjection(owner=null, name=state_describe, alias=Optional.empty)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@6d5f7faa, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@723d9145, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@1cdf25da, containsSubquery=false)
+2021-04-13 09:16:36.981 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item_0 LIMIT ? ::: [5]
+2021-04-13 09:16:36.982 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item_1 LIMIT ? ::: [5]
+2021-04-13 09:16:45.265 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_item  ( order_id,
+spu_id,
+spu_name,
+sku_id,
+sku_name,
+
+price,
+real_amount,
+coupon_code,
+coupon_amount,
+promotion_amount,
+quantity,
+
+first_category_id,
+
+
+
+bar_code,
+update_time,
+member_id,
+state_describe )  VALUES  ( ?,
+?,
+?,
+?,
+?,
+
+?,
+?,
+?,
+?,
+?,
+?,
+
+?,
+
+
+
+?,
+?,
+?,
+? )
+2021-04-13 09:16:45.266 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@6f8d5a4c, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@4add52bc), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@4add52bc, columnNames=[order_id, spu_id, spu_name, sku_id, sku_name, price, real_amount, coupon_code, coupon_amount, promotion_amount, quantity, first_category_id, bar_code, update_time, member_id, state_describe], insertValueContexts=[InsertValueContext(parametersCount=16, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=234, stopIndex=234, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=237, stopIndex=237, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=240, stopIndex=240, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=243, stopIndex=243, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=246, stopIndex=246, parameterMarkerIndex=4), ParameterMarkerExpressionSegment(startIndex=250, stopIndex=250, parameterMarkerIndex=5), ParameterMarkerExpressionSegment(startIndex=253, stopIndex=253, parameterMarkerIndex=6), ParameterMarkerExpressionSegment(startIndex=256, stopIndex=256, parameterMarkerIndex=7), ParameterMarkerExpressionSegment(startIndex=259, stopIndex=259, parameterMarkerIndex=8), ParameterMarkerExpressionSegment(startIndex=262, stopIndex=262, parameterMarkerIndex=9), ParameterMarkerExpressionSegment(startIndex=265, stopIndex=265, parameterMarkerIndex=10), ParameterMarkerExpressionSegment(startIndex=269, stopIndex=269, parameterMarkerIndex=11), ParameterMarkerExpressionSegment(startIndex=275, stopIndex=275, parameterMarkerIndex=12), ParameterMarkerExpressionSegment(startIndex=278, stopIndex=278, parameterMarkerIndex=13), ParameterMarkerExpressionSegment(startIndex=281, stopIndex=281, parameterMarkerIndex=14), ParameterMarkerExpressionSegment(startIndex=284, stopIndex=284, parameterMarkerIndex=15)], parameters=[1618276605186, 1e3500a9b4624502b4c2471b44fd1749, spu商品名称-147, 02a0dfae16df441fa8c295934071b40f, sku商品名称-147, 30, 30, 1618276605186, 20, 10, 10, 1618276605186, 1618276605186, 2021-04-13 09:16:45.186, 147, nnnnnnn-des])], generatedKeyContext=Optional.empty)
+2021-04-13 09:16:45.267 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_item_1  ( order_id,
+spu_id,
+spu_name,
+sku_id,
+sku_name,
+
+price,
+real_amount,
+coupon_code,
+coupon_amount,
+promotion_amount,
+quantity,
+
+first_category_id,
+
+
+
+bar_code,
+update_time,
+member_id,
+state_describe )  VALUES  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ::: [1618276605186, 1e3500a9b4624502b4c2471b44fd1749, spu商品名称-147, 02a0dfae16df441fa8c295934071b40f, sku商品名称-147, 30, 30, 1618276605186, 20, 10, 10, 1618276605186, 1618276605186, 2021-04-13 09:16:45.186, 147, nnnnnnn-des]
+2021-04-13 09:18:07.247 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:18:07.248 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:18:07.254 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:18:07.255 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:18:07.255 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:21:08.555 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 12644 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:21:08.559 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:21:10.184 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:21:10.195 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:21:10.196 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:21:10.196 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:21:10.288 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:21:10.289 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1472 ms
+2021-04-13 09:21:11.400 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:21:11.652 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:21:11.655 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:21:11.671 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:21:11.707 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:21:11.823 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 168 milliseconds.
+2021-04-13 09:21:12.263 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:21:12.638 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:21:12.659 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:21:12.670 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 4.877 seconds (JVM running for 5.783)
+2021-04-13 09:22:08.800 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:22:08.801 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:22:08.806 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:22:08.807 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:22:08.807 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:22:14.837 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 13132 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:22:14.842 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:22:16.259 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:22:16.269 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:22:16.270 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:22:16.271 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:22:16.355 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:22:16.356 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1240 ms
+2021-04-13 09:22:17.645 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:22:17.900 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:22:17.905 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:22:17.927 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:22:18.574 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:22:21.294 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 3389 milliseconds.
+2021-04-13 09:22:21.567 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:22:21.800 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:22:21.821 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:22:21.831 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 7.753 seconds (JVM running for 8.633)
+2021-04-13 09:24:40.027 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 09:24:40.027 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 09:24:40.028 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 09:24:40.635 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT COUNT(1) FROM order_item
+2021-04-13 09:24:40.635 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@3b5e7b93, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@4bad6cbc), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@4bad6cbc, projectionsContext=ProjectionsContext(startIndex=7, stopIndex=14, distinctRow=false, projections=[AggregationProjection(type=COUNT, innerExpression=(1), alias=Optional.empty, derivedAggregationProjections=[], index=-1)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@d49be2a, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@468a8831, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@ec0e190, containsSubquery=false)
+2021-04-13 09:24:40.636 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_item_0
+2021-04-13 09:24:40.636 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_item_1
+2021-04-13 09:24:40.712 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item LIMIT ?
+2021-04-13 09:24:40.712 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@654f7f47, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@368eb80d), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@368eb80d, projectionsContext=ProjectionsContext(startIndex=8, stopIndex=256, distinctRow=false, projections=[ColumnProjection(owner=null, name=order_id, alias=Optional.empty), ColumnProjection(owner=null, name=spu_id, alias=Optional.empty), ColumnProjection(owner=null, name=spu_name, alias=Optional.empty), ColumnProjection(owner=null, name=sku_id, alias=Optional.empty), ColumnProjection(owner=null, name=sku_name, alias=Optional.empty), ColumnProjection(owner=null, name=sku_pic, alias=Optional.empty), ColumnProjection(owner=null, name=price, alias=Optional.empty), ColumnProjection(owner=null, name=real_amount, alias=Optional.empty), ColumnProjection(owner=null, name=coupon_code, alias=Optional.empty), ColumnProjection(owner=null, name=coupon_amount, alias=Optional.empty), ColumnProjection(owner=null, name=promotion_amount, alias=Optional.empty), ColumnProjection(owner=null, name=quantity, alias=Optional.empty), ColumnProjection(owner=null, name=weight, alias=Optional.empty), ColumnProjection(owner=null, name=first_category_id, alias=Optional.empty), ColumnProjection(owner=null, name=first_category_name, alias=Optional.empty), ColumnProjection(owner=null, name=second_category_id, alias=Optional.empty), ColumnProjection(owner=null, name=second_category_name, alias=Optional.empty), ColumnProjection(owner=null, name=bar_code, alias=Optional.empty), ColumnProjection(owner=null, name=update_time, alias=Optional.empty), ColumnProjection(owner=null, name=member_id, alias=Optional.empty), ColumnProjection(owner=null, name=state_describe, alias=Optional.empty)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@5828c17a, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@664db61b, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@78e658d2, containsSubquery=false)
+2021-04-13 09:24:40.712 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item_0 LIMIT ? ::: [5]
+2021-04-13 09:24:40.713 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item_1 LIMIT ? ::: [5]
+2021-04-13 09:24:42.845 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT COUNT(1) FROM order_item
+2021-04-13 09:24:42.846 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@3b5e7b93, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@249f8a7c), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@249f8a7c, projectionsContext=ProjectionsContext(startIndex=7, stopIndex=14, distinctRow=false, projections=[AggregationProjection(type=COUNT, innerExpression=(1), alias=Optional.empty, derivedAggregationProjections=[], index=-1)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@2a58709f, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@2e67e10c, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@6b657aa4, containsSubquery=false)
+2021-04-13 09:24:42.846 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_item_0
+2021-04-13 09:24:42.846 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_item_1
+2021-04-13 09:24:42.849 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item LIMIT ?
+2021-04-13 09:24:42.849 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@654f7f47, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@b4a85eb), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@b4a85eb, projectionsContext=ProjectionsContext(startIndex=8, stopIndex=256, distinctRow=false, projections=[ColumnProjection(owner=null, name=order_id, alias=Optional.empty), ColumnProjection(owner=null, name=spu_id, alias=Optional.empty), ColumnProjection(owner=null, name=spu_name, alias=Optional.empty), ColumnProjection(owner=null, name=sku_id, alias=Optional.empty), ColumnProjection(owner=null, name=sku_name, alias=Optional.empty), ColumnProjection(owner=null, name=sku_pic, alias=Optional.empty), ColumnProjection(owner=null, name=price, alias=Optional.empty), ColumnProjection(owner=null, name=real_amount, alias=Optional.empty), ColumnProjection(owner=null, name=coupon_code, alias=Optional.empty), ColumnProjection(owner=null, name=coupon_amount, alias=Optional.empty), ColumnProjection(owner=null, name=promotion_amount, alias=Optional.empty), ColumnProjection(owner=null, name=quantity, alias=Optional.empty), ColumnProjection(owner=null, name=weight, alias=Optional.empty), ColumnProjection(owner=null, name=first_category_id, alias=Optional.empty), ColumnProjection(owner=null, name=first_category_name, alias=Optional.empty), ColumnProjection(owner=null, name=second_category_id, alias=Optional.empty), ColumnProjection(owner=null, name=second_category_name, alias=Optional.empty), ColumnProjection(owner=null, name=bar_code, alias=Optional.empty), ColumnProjection(owner=null, name=update_time, alias=Optional.empty), ColumnProjection(owner=null, name=member_id, alias=Optional.empty), ColumnProjection(owner=null, name=state_describe, alias=Optional.empty)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@3688ca6d, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@48af2eb0, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@503e5831, containsSubquery=false)
+2021-04-13 09:24:42.849 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item_0 LIMIT ? ::: [5]
+2021-04-13 09:24:42.850 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item_1 LIMIT ? ::: [5]
+2021-04-13 09:24:47.795 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_item  ( order_id,
+spu_id,
+spu_name,
+sku_id,
+sku_name,
+
+price,
+real_amount,
+coupon_code,
+coupon_amount,
+promotion_amount,
+quantity,
+
+first_category_id,
+
+
+
+bar_code,
+update_time,
+member_id,
+state_describe )  VALUES  ( ?,
+?,
+?,
+?,
+?,
+
+?,
+?,
+?,
+?,
+?,
+?,
+
+?,
+
+
+
+?,
+?,
+?,
+? )
+2021-04-13 09:24:47.795 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@1f9ba65d, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@65ee1047), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@65ee1047, columnNames=[order_id, spu_id, spu_name, sku_id, sku_name, price, real_amount, coupon_code, coupon_amount, promotion_amount, quantity, first_category_id, bar_code, update_time, member_id, state_describe], insertValueContexts=[InsertValueContext(parametersCount=16, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=234, stopIndex=234, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=237, stopIndex=237, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=240, stopIndex=240, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=243, stopIndex=243, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=246, stopIndex=246, parameterMarkerIndex=4), ParameterMarkerExpressionSegment(startIndex=250, stopIndex=250, parameterMarkerIndex=5), ParameterMarkerExpressionSegment(startIndex=253, stopIndex=253, parameterMarkerIndex=6), ParameterMarkerExpressionSegment(startIndex=256, stopIndex=256, parameterMarkerIndex=7), ParameterMarkerExpressionSegment(startIndex=259, stopIndex=259, parameterMarkerIndex=8), ParameterMarkerExpressionSegment(startIndex=262, stopIndex=262, parameterMarkerIndex=9), ParameterMarkerExpressionSegment(startIndex=265, stopIndex=265, parameterMarkerIndex=10), ParameterMarkerExpressionSegment(startIndex=269, stopIndex=269, parameterMarkerIndex=11), ParameterMarkerExpressionSegment(startIndex=275, stopIndex=275, parameterMarkerIndex=12), ParameterMarkerExpressionSegment(startIndex=278, stopIndex=278, parameterMarkerIndex=13), ParameterMarkerExpressionSegment(startIndex=281, stopIndex=281, parameterMarkerIndex=14), ParameterMarkerExpressionSegment(startIndex=284, stopIndex=284, parameterMarkerIndex=15)], parameters=[1618277087715, c0ff323e61f241e0b58a72760b77346a, spu商品名称-665, 92bf9aeadd06456c91a3fe09755fba67, sku商品名称-665, 30, 30, 1618277087715, 20, 10, 10, 1618277087715, 1618277087715, 2021-04-13 09:24:47.715, 665, nnnnnnn-des])], generatedKeyContext=Optional.empty)
+2021-04-13 09:24:47.796 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_item_1  ( order_id,
+spu_id,
+spu_name,
+sku_id,
+sku_name,
+
+price,
+real_amount,
+coupon_code,
+coupon_amount,
+promotion_amount,
+quantity,
+
+first_category_id,
+
+
+
+bar_code,
+update_time,
+member_id,
+state_describe )  VALUES  (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ::: [1618277087715, c0ff323e61f241e0b58a72760b77346a, spu商品名称-665, 92bf9aeadd06456c91a3fe09755fba67, sku商品名称-665, 30, 30, 1618277087715, 20, 10, 10, 1618277087715, 1618277087715, 2021-04-13 09:24:47.715, 665, nnnnnnn-des]
+2021-04-13 09:29:15.652 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:29:15.653 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:29:15.658 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:29:15.659 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:29:15.659 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:29:20.994 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 13888 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:29:20.997 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:29:22.304 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:29:22.315 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:29:22.316 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:29:22.316 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:29:22.397 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:29:22.397 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1183 ms
+2021-04-13 09:29:23.273 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:29:23.480 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+- order_cancel_apply
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+  order_cancel_apply:
+    actualDataNodes: dsnode1.order_cancel_apply_${0..1}
+    logicTable: order_cancel_apply
+    tableStrategy:
+      hint:
+        algorithmClassName: com.hins.jdbc.config.shard.HintTableShardingAlgorithm
+
+2021-04-13 09:29:23.482 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:29:23.496 INFO  ShardingSphere-metadata Line:131 - Loading 2 logic tables' meta data.
+2021-04-13 09:29:23.532 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:29:23.625 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 142 milliseconds.
+2021-04-13 09:29:23.897 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:29:24.122 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:29:24.151 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:29:24.163 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 3.822 seconds (JVM running for 4.504)
+2021-04-13 09:30:08.054 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 09:30:08.054 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 09:30:08.055 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 09:30:08.647 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT COUNT(1) FROM order_item
+2021-04-13 09:30:08.648 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@21e17970, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@39e1e9af), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@39e1e9af, projectionsContext=ProjectionsContext(startIndex=7, stopIndex=14, distinctRow=false, projections=[AggregationProjection(type=COUNT, innerExpression=(1), alias=Optional.empty, derivedAggregationProjections=[], index=-1)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@4205a7e8, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@21d95e1d, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@bd999af, containsSubquery=false)
+2021-04-13 09:30:08.649 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_item_0
+2021-04-13 09:30:08.649 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_item_1
+2021-04-13 09:30:08.718 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item LIMIT ?
+2021-04-13 09:30:08.719 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@f88e7f8, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@313c85fe), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@313c85fe, projectionsContext=ProjectionsContext(startIndex=8, stopIndex=256, distinctRow=false, projections=[ColumnProjection(owner=null, name=order_id, alias=Optional.empty), ColumnProjection(owner=null, name=spu_id, alias=Optional.empty), ColumnProjection(owner=null, name=spu_name, alias=Optional.empty), ColumnProjection(owner=null, name=sku_id, alias=Optional.empty), ColumnProjection(owner=null, name=sku_name, alias=Optional.empty), ColumnProjection(owner=null, name=sku_pic, alias=Optional.empty), ColumnProjection(owner=null, name=price, alias=Optional.empty), ColumnProjection(owner=null, name=real_amount, alias=Optional.empty), ColumnProjection(owner=null, name=coupon_code, alias=Optional.empty), ColumnProjection(owner=null, name=coupon_amount, alias=Optional.empty), ColumnProjection(owner=null, name=promotion_amount, alias=Optional.empty), ColumnProjection(owner=null, name=quantity, alias=Optional.empty), ColumnProjection(owner=null, name=weight, alias=Optional.empty), ColumnProjection(owner=null, name=first_category_id, alias=Optional.empty), ColumnProjection(owner=null, name=first_category_name, alias=Optional.empty), ColumnProjection(owner=null, name=second_category_id, alias=Optional.empty), ColumnProjection(owner=null, name=second_category_name, alias=Optional.empty), ColumnProjection(owner=null, name=bar_code, alias=Optional.empty), ColumnProjection(owner=null, name=update_time, alias=Optional.empty), ColumnProjection(owner=null, name=member_id, alias=Optional.empty), ColumnProjection(owner=null, name=state_describe, alias=Optional.empty)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@6417a8a, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@3c0e72fc, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@7471e5a2, containsSubquery=false)
+2021-04-13 09:30:08.719 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item_0 LIMIT ? ::: [5]
+2021-04-13 09:30:08.720 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item_1 LIMIT ? ::: [5]
+2021-04-13 09:44:15.786 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:44:15.787 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:44:15.792 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:44:15.793 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:44:15.793 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:44:21.079 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 8992 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:44:21.083 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:44:22.470 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:44:22.480 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:44:22.481 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:44:22.481 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:44:22.562 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:44:22.562 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1242 ms
+2021-04-13 09:44:23.490 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:44:23.695 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:44:23.697 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:44:23.711 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:44:23.739 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:44:23.847 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 150 milliseconds.
+2021-04-13 09:44:24.142 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:44:24.410 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:44:24.429 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:44:24.440 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 4.016 seconds (JVM running for 4.637)
+2021-04-13 09:44:45.711 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 09:44:45.712 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 09:44:45.713 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 09:44:46.369 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT COUNT(1) FROM order_tbl
+2021-04-13 09:44:46.370 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@6b78cfd5, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@7e369a3a), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@7e369a3a, projectionsContext=ProjectionsContext(startIndex=7, stopIndex=14, distinctRow=false, projections=[AggregationProjection(type=COUNT, innerExpression=(1), alias=Optional.empty, derivedAggregationProjections=[], index=-1)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@48d87009, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@694046ae, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@446b3a34, containsSubquery=false)
+2021-04-13 09:44:46.372 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_tbl
+2021-04-13 09:46:13.455 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:46:13.456 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:46:13.461 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:46:13.462 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:46:13.462 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:46:18.724 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 5700 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:46:18.728 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:46:20.251 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:46:20.263 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:46:20.264 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:46:20.264 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:46:20.355 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:46:20.355 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1369 ms
+2021-04-13 09:46:21.369 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:46:21.615 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:46:21.618 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:46:21.635 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:46:21.669 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:46:21.805 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 186 milliseconds.
+2021-04-13 09:46:39.689 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:46:39.971 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:46:39.997 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:46:40.009 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 22.003 seconds (JVM running for 22.781)
+2021-04-13 09:47:12.574 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 09:47:12.575 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 09:47:12.576 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 09:47:13.172 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT COUNT(1) FROM order_cancel_apply
+2021-04-13 09:47:13.172 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@68183cb1, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@d6d99e4), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@d6d99e4, projectionsContext=ProjectionsContext(startIndex=7, stopIndex=14, distinctRow=false, projections=[AggregationProjection(type=COUNT, innerExpression=(1), alias=Optional.empty, derivedAggregationProjections=[], index=-1)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@3b4ee223, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@961ed4b, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@2035a562, containsSubquery=false)
+2021-04-13 09:47:13.173 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_cancel_apply
+2021-04-13 09:47:13.250 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT  order_id,member_id,cancel_type,reason,update_time  FROM order_cancel_apply LIMIT ?
+2021-04-13 09:47:13.250 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@1234069e, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@7ff14117), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@7ff14117, projectionsContext=ProjectionsContext(startIndex=8, stopIndex=56, distinctRow=false, projections=[ColumnProjection(owner=null, name=order_id, alias=Optional.empty), ColumnProjection(owner=null, name=member_id, alias=Optional.empty), ColumnProjection(owner=null, name=cancel_type, alias=Optional.empty), ColumnProjection(owner=null, name=reason, alias=Optional.empty), ColumnProjection(owner=null, name=update_time, alias=Optional.empty)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@49d111ee, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@3015715d, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@2a78137, containsSubquery=false)
+2021-04-13 09:47:13.251 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,member_id,cancel_type,reason,update_time  FROM order_cancel_apply LIMIT ? ::: [5]
+2021-04-13 09:47:22.826 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_03  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:47:22.827 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@6ce2a8d2, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@4824fac7), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@4824fac7, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=116, stopIndex=116, parameterMarkerIndex=4)], parameters=[1618278442787, 166, 1, yuan yin reason, 2021-04-13 09:47:22.787])], generatedKeyContext=Optional.empty)
+2021-04-13 09:47:22.828 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_03  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278442787, 166, 1, yuan yin reason, 2021-04-13 09:47:22.787]
+2021-04-13 09:47:25.700 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_03  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:47:25.701 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@6ce2a8d2, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@278d22bd), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@278d22bd, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=116, stopIndex=116, parameterMarkerIndex=4)], parameters=[1618278445695, 79, 1, yuan yin reason, 2021-04-13 09:47:25.695])], generatedKeyContext=Optional.empty)
+2021-04-13 09:47:25.701 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_03  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278445695, 79, 1, yuan yin reason, 2021-04-13 09:47:25.695]
+2021-04-13 09:47:26.419 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:47:26.420 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@c5d80f, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@e023667), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@e023667, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618278446415, 31, 1, yuan yin reason, 2021-04-13 09:47:26.415])], generatedKeyContext=Optional.empty)
+2021-04-13 09:47:26.420 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278446415, 31, 1, yuan yin reason, 2021-04-13 09:47:26.415]
+2021-04-13 09:49:28.038 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:49:28.038 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:49:28.043 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:49:28.044 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:49:28.044 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:49:32.808 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 10360 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:49:32.813 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:49:34.395 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:49:34.407 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:49:34.408 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:49:34.408 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:49:34.502 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:49:34.503 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1428 ms
+2021-04-13 09:49:35.478 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:49:35.723 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:49:35.725 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:49:35.743 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:49:35.779 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:49:35.930 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 205 milliseconds.
+2021-04-13 09:49:40.405 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:49:40.694 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:49:40.715 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:49:40.727 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 8.67 seconds (JVM running for 9.422)
+2021-04-13 09:51:48.556 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:51:48.557 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:51:48.562 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:51:48.563 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:51:48.564 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:51:54.135 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 13696 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:51:54.138 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:51:55.511 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:51:55.520 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:51:55.521 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:51:55.521 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:51:55.598 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:51:55.599 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1203 ms
+2021-04-13 09:51:56.496 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:51:56.696 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:51:56.698 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:51:56.712 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:51:56.742 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:51:57.311 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 613 milliseconds.
+2021-04-13 09:51:57.579 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:51:57.809 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:51:57.827 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:51:57.837 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 4.484 seconds (JVM running for 5.23)
+2021-04-13 09:53:56.359 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:53:56.359 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:53:56.364 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:53:56.365 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:53:56.365 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:53:59.792 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 1444 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:53:59.796 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:54:01.242 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:54:01.252 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:54:01.253 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:54:01.253 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:54:01.338 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:54:01.338 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1286 ms
+2021-04-13 09:54:02.248 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:54:02.471 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:54:02.474 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:54:02.490 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:54:02.521 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:54:02.644 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 170 milliseconds.
+2021-04-13 09:54:02.948 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:54:03.190 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:54:03.211 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:54:03.221 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 4.206 seconds (JVM running for 4.937)
+2021-04-13 09:54:09.060 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 09:54:09.060 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 09:54:09.061 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 09:54:09.665 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:54:09.666 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@406a9507, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@341d9df2), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@341d9df2, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618278849087, 852, 1, yuan yin reason, 2021-04-13 09:54:09.087])], generatedKeyContext=Optional.empty)
+2021-04-13 09:54:09.667 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278849087, 852, 1, yuan yin reason, 2021-04-13 09:54:09.087]
+2021-04-13 09:54:40.049 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:54:40.050 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@406a9507, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@2db0a2f), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@2db0a2f, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618278880046, 465, 1, yuan yin reason, 2021-04-13 09:54:40.046])], generatedKeyContext=Optional.empty)
+2021-04-13 09:54:40.051 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278880046, 465, 1, yuan yin reason, 2021-04-13 09:54:40.046]
+2021-04-13 09:54:40.974 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:54:40.975 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@406a9507, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@d5fd104), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@d5fd104, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618278880971, 941, 1, yuan yin reason, 2021-04-13 09:54:40.971])], generatedKeyContext=Optional.empty)
+2021-04-13 09:54:40.976 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278880971, 941, 1, yuan yin reason, 2021-04-13 09:54:40.971]
+2021-04-13 09:54:41.630 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:54:41.631 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@406a9507, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@5990a093), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@5990a093, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618278881628, 813, 1, yuan yin reason, 2021-04-13 09:54:41.628])], generatedKeyContext=Optional.empty)
+2021-04-13 09:54:41.631 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278881628, 813, 1, yuan yin reason, 2021-04-13 09:54:41.628]
+2021-04-13 09:54:43.208 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:54:43.208 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@406a9507, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@6b3580e5), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@6b3580e5, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618278883205, 338, 1, yuan yin reason, 2021-04-13 09:54:43.205])], generatedKeyContext=Optional.empty)
+2021-04-13 09:54:43.209 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278883205, 338, 1, yuan yin reason, 2021-04-13 09:54:43.205]
+2021-04-13 09:54:43.975 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:54:43.975 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@406a9507, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@1beb066a), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@1beb066a, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618278883972, 249, 1, yuan yin reason, 2021-04-13 09:54:43.972])], generatedKeyContext=Optional.empty)
+2021-04-13 09:54:43.976 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278883972, 249, 1, yuan yin reason, 2021-04-13 09:54:43.972]
+2021-04-13 09:54:44.653 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:54:44.653 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@406a9507, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@1b276ccf), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@1b276ccf, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618278884650, 218, 1, yuan yin reason, 2021-04-13 09:54:44.65])], generatedKeyContext=Optional.empty)
+2021-04-13 09:54:44.654 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278884650, 218, 1, yuan yin reason, 2021-04-13 09:54:44.65]
+2021-04-13 09:56:08.825 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:56:08.825 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:56:08.830 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:56:08.831 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:56:08.831 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:56:13.312 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 8312 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:56:13.316 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:56:14.572 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:56:14.581 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:56:14.581 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:56:14.582 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:56:14.661 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:56:14.662 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1128 ms
+2021-04-13 09:56:15.505 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:56:15.721 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:56:15.723 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:56:15.737 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:56:15.765 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:56:15.858 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 134 milliseconds.
+2021-04-13 09:56:16.135 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:56:16.362 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:56:16.385 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:56:16.395 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 3.716 seconds (JVM running for 4.361)
+2021-04-13 09:56:27.397 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 09:56:27.398 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 09:56:27.399 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 09:56:43.282 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:56:43.283 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@26cc8630, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@b6feb29), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@b6feb29, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618278987425, 544, 1, yuan yin reason, 2021-04-13 09:56:27.425])], generatedKeyContext=Optional.empty)
+2021-04-13 09:56:43.284 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618278987425, 544, 1, yuan yin reason, 2021-04-13 09:56:27.425]
+2021-04-13 09:57:23.117 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:57:23.118 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@61cc9027, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@6f0b726e), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@6f0b726e, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618279043113, 751, 1, yuan yin reason, 2021-04-13 09:57:23.113])], generatedKeyContext=Optional.empty)
+2021-04-13 09:57:23.118 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279043113, 751, 1, yuan yin reason, 2021-04-13 09:57:23.113]
+2021-04-13 09:57:23.647 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:57:23.647 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@26cc8630, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@4c5c3251), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@4c5c3251, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279043644, 229, 1, yuan yin reason, 2021-04-13 09:57:23.644])], generatedKeyContext=Optional.empty)
+2021-04-13 09:57:23.648 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279043644, 229, 1, yuan yin reason, 2021-04-13 09:57:23.644]
+2021-04-13 09:57:24.175 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:57:24.176 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@61cc9027, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@107a1b31), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@107a1b31, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618279044173, 440, 1, yuan yin reason, 2021-04-13 09:57:24.173])], generatedKeyContext=Optional.empty)
+2021-04-13 09:57:24.176 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279044173, 440, 1, yuan yin reason, 2021-04-13 09:57:24.173]
+2021-04-13 09:57:24.807 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:57:24.807 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@26cc8630, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@743823a2), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@743823a2, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279044805, 875, 1, yuan yin reason, 2021-04-13 09:57:24.805])], generatedKeyContext=Optional.empty)
+2021-04-13 09:57:24.808 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279044805, 875, 1, yuan yin reason, 2021-04-13 09:57:24.805]
+2021-04-13 09:57:25.311 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:57:25.312 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@61cc9027, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@3e4c847f), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@3e4c847f, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618279045308, 476, 1, yuan yin reason, 2021-04-13 09:57:25.308])], generatedKeyContext=Optional.empty)
+2021-04-13 09:57:25.312 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279045308, 476, 1, yuan yin reason, 2021-04-13 09:57:25.308]
+2021-04-13 09:57:25.919 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 09:57:25.920 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@61cc9027, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@77952c5b), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@77952c5b, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618279045917, 592, 1, yuan yin reason, 2021-04-13 09:57:25.917])], generatedKeyContext=Optional.empty)
+2021-04-13 09:57:25.920 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279045917, 592, 1, yuan yin reason, 2021-04-13 09:57:25.917]
+2021-04-13 09:59:28.501 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:59:28.501 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:59:28.506 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 09:59:28.506 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 09:59:28.507 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 09:59:33.207 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 9056 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 09:59:33.211 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 09:59:34.768 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 09:59:34.780 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:59:34.781 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 09:59:34.781 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 09:59:34.873 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 09:59:34.873 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1391 ms
+2021-04-13 09:59:35.931 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 09:59:36.188 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 09:59:36.191 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 09:59:36.207 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 09:59:36.417 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 09:59:36.769 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 577 milliseconds.
+2021-04-13 09:59:37.110 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 09:59:37.405 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 09:59:37.430 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 09:59:37.442 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 4.914 seconds (JVM running for 5.606)
+2021-04-13 10:00:27.238 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 10:00:27.239 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 10:00:27.240 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 10:00:27.882 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_1  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 10:00:27.882 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@3af12f81, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@51ad613a), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@51ad613a, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279227265, 469, 1, yuan yin reason, 2021-04-13 10:00:27.265])], generatedKeyContext=Optional.empty)
+2021-04-13 10:00:27.883 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_1  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279227265, 469, 1, yuan yin reason, 2021-04-13 10:00:27.265]
+2021-04-13 10:00:37.063 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 10:00:37.064 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 10:00:37.070 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 10:00:37.072 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 10:00:37.072 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 10:00:41.010 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 14280 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 10:00:41.014 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 10:00:42.662 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 10:00:42.674 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 10:00:42.675 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 10:00:42.675 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 10:00:42.777 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 10:00:42.777 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1479 ms
+2021-04-13 10:00:43.873 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 10:00:44.126 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 10:00:44.129 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 10:00:44.146 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 10:00:44.198 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 10:00:44.323 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 194 milliseconds.
+2021-04-13 10:00:44.639 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 10:00:44.918 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 10:00:44.941 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 10:00:44.954 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 4.812 seconds (JVM running for 5.587)
+2021-04-13 10:00:54.035 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 10:00:54.036 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 10:00:54.039 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 3 ms
+2021-04-13 10:00:54.669 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 10:00:54.670 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@2c5451d5, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@792c170a), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@792c170a, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279254068, 373, 1, yuan yin reason, 2021-04-13 10:00:54.068])], generatedKeyContext=Optional.empty)
+2021-04-13 10:00:54.671 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279254068, 373, 1, yuan yin reason, 2021-04-13 10:00:54.068]
+2021-04-13 10:00:56.965 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_1  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 10:00:56.965 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@170052c2, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@19c7ae52), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@19c7ae52, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279256960, 675, 1, yuan yin reason, 2021-04-13 10:00:56.96])], generatedKeyContext=Optional.empty)
+2021-04-13 10:00:56.966 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_1  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279256960, 675, 1, yuan yin reason, 2021-04-13 10:00:56.96]
+2021-04-13 10:00:57.728 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 10:00:57.728 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@2c5451d5, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@a7c64b3), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@a7c64b3, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279257725, 313, 1, yuan yin reason, 2021-04-13 10:00:57.725])], generatedKeyContext=Optional.empty)
+2021-04-13 10:00:57.729 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279257725, 313, 1, yuan yin reason, 2021-04-13 10:00:57.725]
+2021-04-13 10:00:58.415 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 10:00:58.416 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@2c5451d5, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@57e6081e), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@57e6081e, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279258414, 904, 1, yuan yin reason, 2021-04-13 10:00:58.414])], generatedKeyContext=Optional.empty)
+2021-04-13 10:00:58.417 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279258414, 904, 1, yuan yin reason, 2021-04-13 10:00:58.414]
+2021-04-13 10:00:59.152 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_1  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 10:00:59.153 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@170052c2, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@58e96b4c), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@58e96b4c, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279259150, 126, 1, yuan yin reason, 2021-04-13 10:00:59.15])], generatedKeyContext=Optional.empty)
+2021-04-13 10:00:59.153 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_1  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279259150, 126, 1, yuan yin reason, 2021-04-13 10:00:59.15]
+2021-04-13 10:01:03.113 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_1  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 10:01:03.114 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@170052c2, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@5b810448), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@5b810448, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279263110, 694, 1, yuan yin reason, 2021-04-13 10:01:03.11])], generatedKeyContext=Optional.empty)
+2021-04-13 10:01:03.114 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_1  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279263110, 694, 1, yuan yin reason, 2021-04-13 10:01:03.11]
+2021-04-13 10:01:04.225 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 10:01:04.226 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@2c5451d5, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@61b2a7c9), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@61b2a7c9, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279264222, 773, 1, yuan yin reason, 2021-04-13 10:01:04.222])], generatedKeyContext=Optional.empty)
+2021-04-13 10:01:04.226 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279264222, 773, 1, yuan yin reason, 2021-04-13 10:01:04.222]
+2021-04-13 10:04:02.223 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 10:04:02.225 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@2c5451d5, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@48976a13), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@48976a13, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=103, stopIndex=103, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=106, stopIndex=106, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=109, stopIndex=109, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=112, stopIndex=112, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=115, stopIndex=115, parameterMarkerIndex=4)], parameters=[1618279416424, 365, 1, yuan yin reason, 2021-04-13 10:03:36.424])], generatedKeyContext=Optional.empty)
+2021-04-13 10:04:02.226 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply_0  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618279416424, 365, 1, yuan yin reason, 2021-04-13 10:03:36.424]
+2021-04-13 10:22:08.986 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 10:22:08.988 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 10:22:08.995 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 10:22:08.996 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 10:22:08.997 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 10:55:02.277 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 8348 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 10:55:02.281 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 10:55:03.777 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 10:55:03.788 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 10:55:03.789 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 10:55:03.790 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 10:55:03.885 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 10:55:03.885 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1353 ms
+2021-04-13 10:55:04.847 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 10:55:05.069 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 10:55:05.071 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 10:55:05.085 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 10:55:05.121 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 10:55:05.219 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 147 milliseconds.
+2021-04-13 10:55:05.517 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 10:55:05.758 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 10:55:05.778 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 10:55:05.788 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 4.254 seconds (JVM running for 4.962)
+2021-04-13 11:07:15.643 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 11:07:15.644 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 11:07:15.645 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 1 ms
+2021-04-13 11:07:16.290 INFO  ShardingSphere-SQL Line:74  - Logic SQL: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  ( ?,
+?,
+?,
+?,
+? )
+2021-04-13 11:07:16.291 INFO  ShardingSphere-SQL Line:74  - SQLStatement: InsertStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.InsertStatement@3458e682, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@7e33feff), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@7e33feff, columnNames=[order_id, member_id, cancel_type, reason, update_time], insertValueContexts=[InsertValueContext(parametersCount=5, valueExpressions=[ParameterMarkerExpressionSegment(startIndex=101, stopIndex=101, parameterMarkerIndex=0), ParameterMarkerExpressionSegment(startIndex=104, stopIndex=104, parameterMarkerIndex=1), ParameterMarkerExpressionSegment(startIndex=107, stopIndex=107, parameterMarkerIndex=2), ParameterMarkerExpressionSegment(startIndex=110, stopIndex=110, parameterMarkerIndex=3), ParameterMarkerExpressionSegment(startIndex=113, stopIndex=113, parameterMarkerIndex=4)], parameters=[1618283235671, 313, 1, yuan yin reason, 2021-04-13 11:07:15.671])], generatedKeyContext=Optional.empty)
+2021-04-13 11:07:16.292 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: INSERT INTO order_cancel_apply  ( order_id,
+member_id,
+cancel_type,
+reason,
+update_time )  VALUES  (?, ?, ?, ?, ?) ::: [1618283235671, 313, 1, yuan yin reason, 2021-04-13 11:07:15.671]
+2021-04-13 11:12:27.457 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 11:12:27.458 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 11:12:27.464 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 11:12:27.464 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 11:12:27.465 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...
+2021-04-13 11:12:32.789 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:55  - Starting Sp19ShardingJdbcApplication using Java 1.8.0_221 on IT-KFQD0009 with PID 13316 (D:\xuan\gitwork\springboot-learning\sp-19-shardingJdbc\target\classes started by USER in D:\xuan\gitwork\springboot-learning)
+2021-04-13 11:12:32.792 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:664 - The following profiles are active: ds-dev
+2021-04-13 11:12:34.188 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:108 - Tomcat initialized with port(s): 8018 (http)
+2021-04-13 11:12:34.199 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Initializing ProtocolHandler ["http-nio-8018"]
+2021-04-13 11:12:34.200 INFO  org.apache.catalina.core.StandardService Line:173 - Starting service [Tomcat]
+2021-04-13 11:12:34.201 INFO  org.apache.catalina.core.StandardEngine Line:173 - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-04-13 11:12:34.297 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring embedded WebApplicationContext
+2021-04-13 11:12:34.297 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext Line:289 - Root WebApplicationContext: initialization completed in 1281 ms
+2021-04-13 11:12:35.310 INFO  com.alibaba.druid.pool.DruidDataSource Line:994 - {dataSource-1} inited
+2021-04-13 11:12:35.546 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - ShardingRuleConfiguration:
+bindingTables:
+- order_item
+tables:
+  order_item:
+    actualDataNodes: dsnode1.order_item_${0..1}
+    logicTable: order_item
+    tableStrategy:
+      inline:
+        algorithmExpression: order_item_${member_id % 2}
+        shardingColumn: member_id
+
+2021-04-13 11:12:35.548 INFO  org.apache.shardingsphere.core.log.ConfigurationLogger Line:104 - Properties:
+sql.show: 'true'
+
+2021-04-13 11:12:35.564 INFO  ShardingSphere-metadata Line:131 - Loading 1 logic tables' meta data.
+2021-04-13 11:12:35.596 INFO  ShardingSphere-metadata Line:70  - Loading 14 tables' meta data.
+2021-04-13 11:12:35.724 INFO  ShardingSphere-metadata Line:59  - Meta data load finished, cost 176 milliseconds.
+2021-04-13 11:12:36.054 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-13 11:12:36.333 INFO  org.apache.coyote.http11.Http11NioProtocol Line:173 - Starting ProtocolHandler ["http-nio-8018"]
+2021-04-13 11:12:36.358 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer Line:220 - Tomcat started on port(s): 8018 (http) with context path '/db'
+2021-04-13 11:12:36.370 INFO  com.hins.jdbc.Sp19ShardingJdbcApplication Line:61  - Started Sp19ShardingJdbcApplication in 4.242 seconds (JVM running for 4.93)
+2021-04-13 11:13:32.196 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/db] Line:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-13 11:13:32.197 INFO  org.springframework.web.servlet.DispatcherServlet Line:525 - Initializing Servlet 'dispatcherServlet'
+2021-04-13 11:13:32.200 INFO  org.springframework.web.servlet.DispatcherServlet Line:547 - Completed initialization in 3 ms
+2021-04-13 11:13:32.855 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT COUNT(1) FROM order_item
+2021-04-13 11:13:32.856 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@256cf3f5, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@51d2ec65), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@51d2ec65, projectionsContext=ProjectionsContext(startIndex=7, stopIndex=14, distinctRow=false, projections=[AggregationProjection(type=COUNT, innerExpression=(1), alias=Optional.empty, derivedAggregationProjections=[], index=-1)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@7c34bd9d, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@49464717, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@bf7e691, containsSubquery=false)
+2021-04-13 11:13:32.856 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_item_0
+2021-04-13 11:13:32.856 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT COUNT(1) FROM order_item_1
+2021-04-13 11:13:32.954 INFO  ShardingSphere-SQL Line:74  - Logic SQL: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item LIMIT ?
+2021-04-13 11:13:32.955 INFO  ShardingSphere-SQL Line:74  - SQLStatement: SelectStatementContext(super=CommonSQLStatementContext(sqlStatement=org.apache.shardingsphere.sql.parser.sql.statement.dml.SelectStatement@2e1e7f70, tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@a3100ca), tablesContext=org.apache.shardingsphere.sql.parser.binder.segment.table.TablesContext@a3100ca, projectionsContext=ProjectionsContext(startIndex=8, stopIndex=256, distinctRow=false, projections=[ColumnProjection(owner=null, name=order_id, alias=Optional.empty), ColumnProjection(owner=null, name=spu_id, alias=Optional.empty), ColumnProjection(owner=null, name=spu_name, alias=Optional.empty), ColumnProjection(owner=null, name=sku_id, alias=Optional.empty), ColumnProjection(owner=null, name=sku_name, alias=Optional.empty), ColumnProjection(owner=null, name=sku_pic, alias=Optional.empty), ColumnProjection(owner=null, name=price, alias=Optional.empty), ColumnProjection(owner=null, name=real_amount, alias=Optional.empty), ColumnProjection(owner=null, name=coupon_code, alias=Optional.empty), ColumnProjection(owner=null, name=coupon_amount, alias=Optional.empty), ColumnProjection(owner=null, name=promotion_amount, alias=Optional.empty), ColumnProjection(owner=null, name=quantity, alias=Optional.empty), ColumnProjection(owner=null, name=weight, alias=Optional.empty), ColumnProjection(owner=null, name=first_category_id, alias=Optional.empty), ColumnProjection(owner=null, name=first_category_name, alias=Optional.empty), ColumnProjection(owner=null, name=second_category_id, alias=Optional.empty), ColumnProjection(owner=null, name=second_category_name, alias=Optional.empty), ColumnProjection(owner=null, name=bar_code, alias=Optional.empty), ColumnProjection(owner=null, name=update_time, alias=Optional.empty), ColumnProjection(owner=null, name=member_id, alias=Optional.empty), ColumnProjection(owner=null, name=state_describe, alias=Optional.empty)]), groupByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.groupby.GroupByContext@5b3fb0a0, orderByContext=org.apache.shardingsphere.sql.parser.binder.segment.select.orderby.OrderByContext@24a589ad, paginationContext=org.apache.shardingsphere.sql.parser.binder.segment.select.pagination.PaginationContext@799d97b6, containsSubquery=false)
+2021-04-13 11:13:32.955 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item_0 LIMIT ? ::: [5]
+2021-04-13 11:13:32.956 INFO  ShardingSphere-SQL Line:74  - Actual SQL: dsnode1 ::: SELECT  order_id,spu_id,spu_name,sku_id,sku_name,sku_pic,price,real_amount,coupon_code,coupon_amount,promotion_amount,quantity,weight,first_category_id,first_category_name,second_category_id,second_category_name,bar_code,update_time,member_id,state_describe  FROM order_item_1 LIMIT ? ::: [5]
+2021-04-13 11:15:40.583 INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor Line:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-13 11:15:40.584 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 11:15:40.589 INFO  com.alibaba.druid.pool.DruidDataSource Line:2101 - {dataSource-1} closed
+2021-04-13 11:15:40.590 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-1} closing ...
+2021-04-13 11:15:40.590 INFO  com.alibaba.druid.pool.DruidDataSource Line:2029 - {dataSource-0} closing ...

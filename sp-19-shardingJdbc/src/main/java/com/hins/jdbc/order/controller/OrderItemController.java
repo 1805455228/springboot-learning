@@ -7,9 +7,11 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hins.jdbc.order.entity.OrderItem;
 import com.hins.jdbc.order.service.IOrderItemService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
@@ -34,10 +36,13 @@ public class OrderItemController {
         private IOrderItemService orderItemService;
 
         @GetMapping("/list")
-        public Object getOrderItemList(){
+        public Object getOrderItemList(@RequestParam(required = false) Long memberId){
             try {
 
                 LambdaQueryWrapper<OrderItem> lambdaQuery2 = Wrappers.<OrderItem>lambdaQuery();
+                if(null != memberId){
+                    lambdaQuery2.eq(OrderItem::getMemberId,memberId);
+                }
                 IPage<OrderItem> page = new Page<>(1,5);
                 page = orderItemService.page(page,lambdaQuery2);
 
