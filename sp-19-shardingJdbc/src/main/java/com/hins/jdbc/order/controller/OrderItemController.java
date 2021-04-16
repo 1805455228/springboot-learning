@@ -35,8 +35,17 @@ public class OrderItemController {
         @Autowired
         private IOrderItemService orderItemService;
 
+    /**
+     * http://localhost:8018/db/order/orderItem/list?memberId=300013018&pageNum=1&pageSize=2
+     * @param memberId
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
         @GetMapping("/list")
-        public Object getOrderItemList(@RequestParam(required = false) Long memberId){
+        public Object getOrderItemList(@RequestParam(required = false) Long memberId,
+                                       @RequestParam(required = false) Integer pageNum,
+                                       @RequestParam(required = false) Integer pageSize){
             try {
 
                 LambdaQueryWrapper<OrderItem> lambdaQuery2 = Wrappers.<OrderItem>lambdaQuery();
@@ -44,7 +53,11 @@ public class OrderItemController {
                     lambdaQuery2.eq(OrderItem::getMemberId,memberId);
                 }
                 lambdaQuery2.lt(OrderItem::getPrice,4);
-                IPage<OrderItem> page = new Page<>(1,5);
+                if(null == pageNum || null == pageSize){
+                    pageNum = 1;
+                    pageSize = 5;
+                }
+                IPage<OrderItem> page = new Page<>(pageNum,pageSize);
                 page = orderItemService.page(page,lambdaQuery2);
 
                 Map<String,Object> result = new HashMap<>();
