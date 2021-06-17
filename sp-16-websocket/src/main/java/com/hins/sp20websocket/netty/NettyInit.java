@@ -1,4 +1,4 @@
-package com.hins.sp16websocket.netty;
+package com.hins.sp20websocket.netty;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;

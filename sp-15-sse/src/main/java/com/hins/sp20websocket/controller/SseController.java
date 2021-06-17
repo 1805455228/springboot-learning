@@ -1,4 +1,4 @@
-package com.hins.sp16websocket.controller;
+package com.hins.sp20websocket.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

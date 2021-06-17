@@ -1,4 +1,4 @@
-package com.hins.sp16websocket.netty;
+package com.hins.sp20websocket.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

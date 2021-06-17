@@ -1,4 +1,4 @@
-package com.hins.sp16websocket.entity;
+package com.hins.sp20websocket.entity;
 
 import lombok.Data;
 

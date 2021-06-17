@@ -1,7 +1,7 @@
-package com.hins.sp16websocket.common;
+package com.hins.sp20websocket.common;
 
 
-import com.hins.sp16websocket.entity.User;
+import com.hins.sp20websocket.entity.User;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.websocketx.WebSocketServerHandshaker;
 

@@ -1,4 +1,4 @@
-package com.hins.sp16websocket.config;
+package com.hins.sp20websocket.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

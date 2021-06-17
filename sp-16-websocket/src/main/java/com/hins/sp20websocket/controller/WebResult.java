@@ -1,8 +1,7 @@
-package com.hins.sp16websocket.controller;
+package com.hins.sp20websocket.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
-import lombok.ToString;
 
 import java.util.HashMap;
 

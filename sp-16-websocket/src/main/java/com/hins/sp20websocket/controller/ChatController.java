@@ -1,21 +1,15 @@
-package com.hins.sp16websocket.controller;
+package com.hins.sp20websocket.controller;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-import com.hins.sp16websocket.entity.ChatGroup;
-import com.hins.sp16websocket.entity.Recontact;
-import com.hins.sp16websocket.entity.User;
+import com.hins.sp20websocket.entity.ChatGroup;
+import com.hins.sp20websocket.entity.Recontact;
+import com.hins.sp20websocket.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 

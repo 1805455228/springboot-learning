@@ -43,3 +43,12 @@
 2021-04-13 11:12:34.787 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.core.entity.SkuStore".
 2021-04-13 11:12:35.745 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.order.entity.OrderCancelApply".
 2021-04-13 11:12:35.776 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.order.entity.OrderItem".
+2021-04-13 11:16:24.523 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.core.entity.SkuStore".
+2021-04-13 11:16:25.452 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.order.entity.OrderCancelApply".
+2021-04-13 11:16:25.480 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.order.entity.OrderItem".
+2021-04-13 11:33:51.856 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.core.entity.SkuStore".
+2021-04-13 11:33:52.863 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.order.entity.OrderCancelApply".
+2021-04-13 11:33:52.894 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.order.entity.OrderItem".
+2021-04-13 11:40:01.480 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.core.entity.SkuStore".
+2021-04-13 11:40:02.538 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.order.entity.OrderCancelApply".
+2021-04-13 11:40:02.570 WARN  com.baomidou.mybatisplus.core.metadata.TableInfoHelper Line:307 - Can not find table primary key in Class: "com.hins.jdbc.order.entity.OrderItem".

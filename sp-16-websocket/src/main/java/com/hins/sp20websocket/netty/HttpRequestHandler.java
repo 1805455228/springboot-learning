@@ -1,6 +1,6 @@
-package com.hins.sp16websocket.netty;
+package com.hins.sp20websocket.netty;
 
-import com.hins.sp16websocket.common.Constants;
+import com.hins.sp20websocket.common.Constants;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;

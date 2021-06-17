@@ -1,17 +1,13 @@
-package com.hins.sp16websocket;
+package com.hins.sp20websocket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.annotation.PostConstruct;
-
 @SpringBootApplication
-public class Sp16WebsocketApplication {
+public class Sp15SseApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Sp16WebsocketApplication.class, args);
+        SpringApplication.run(Sp15SseApplication.class, args);
     }
-
-
 
 }
