@@ -48,6 +48,7 @@
         <module>sp-17-bootRocketmq</module>
         <module>sp-18-shardingsphere</module>
         <module>sp-19-shardingJdbc</module>
+        <module>sp-20-websocket-redis</module>
 
     </modules>
 
