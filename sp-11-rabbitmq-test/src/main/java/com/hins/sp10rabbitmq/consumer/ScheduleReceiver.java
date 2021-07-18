@@ -30,6 +30,8 @@ public class ScheduleReceiver {
     public void receive(User content) {
         logger.info("=======收到====延迟====发送的消息： {}" , content);
         //TODO 处理你需要实现的业务代码
+
+        //TODO 根据订单删除，删除数据库的订单记录
     }
 
 

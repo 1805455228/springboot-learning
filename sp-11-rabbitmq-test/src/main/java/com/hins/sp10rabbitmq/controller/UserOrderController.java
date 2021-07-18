@@ -33,7 +33,7 @@ public class UserOrderController {
     public String login(){
 
         try {
-            //TODO：执行下单、抢单逻辑
+            //TODO：执行下单、抢单逻辑、入库
 
             //TODO：发送订单消息
             User user = new User();
@@ -41,7 +41,7 @@ public class UserOrderController {
             user.setEmail("1805455228@qq.com");
             user.setUsername("xuan你是");
 
-            //发送抢单消息 到用户订单队列
+            //发送抢单消息 到用户订单队列 (秒杀下单利用mq限流)
             byte[] msg = objectMapper.writeValueAsString(user).getBytes("UTF-8");
             rabbitTemplate.setExchange(RabbitConfig.USER_ORDER_EXCHANGE);
             rabbitTemplate.setRoutingKey(RabbitConfig.USER_ORDER_ROUTINGKEY);

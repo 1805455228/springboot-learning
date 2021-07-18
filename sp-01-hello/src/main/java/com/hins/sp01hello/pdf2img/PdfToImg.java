@@ -22,9 +22,29 @@ public class PdfToImg {
         //sn33pdf();//剩女三十三
         //buyiyangdeta();//不一样的他
 //        getGsdjh();//该死的家伙
+       // getDtzr(); //登台之日
 
 
-//        String pdfPath = "/Users/chenqixuan/Downloads/111-登台之日『完结』/ch01-10.PDF";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/1-5.pdf";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/6-10.pdf";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/11-20.pdf";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/21-23.pdf";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/24.pdf";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/25-30.pdf";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/31-40.pdf";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/41-45.pdf";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/46-53.pdf";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/54-55.pdf";
+//        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/56-60.pdf";
+        String pdfPath = "/Users/chenqixuan/Downloads/toptoon/226-完美的一半/61-66.pdf";
+
+        String imgPath = "/Users/chenqixuan/Downloads/toptoon";
+        pdf2Image(pdfPath, imgPath, 130);
+
+    }
+
+    private static void getDtzr() {
+        //        String pdfPath = "/Users/chenqixuan/Downloads/111-登台之日『完结』/ch01-10.PDF";
 //        String pdfPath = "/Users/chenqixuan/Downloads/111-登台之日『完结』/ch11-20.PDF";
 //        String pdfPath = "/Users/chenqixuan/Downloads/111-登台之日『完结』/21.PDF";
 //        String pdfPath = "/Users/chenqixuan/Downloads/111-登台之日『完结』/22.PDF";
@@ -41,7 +61,6 @@ public class PdfToImg {
         String pdfPath = "/Users/chenqixuan/Downloads/111-登台之日『完结』/34.PDF";
         String imgPath = "/Users/chenqixuan/Downloads/toptoon";
         pdf2Image(pdfPath, imgPath, 130);
-
     }
 
     private static void getGsdjh() {
@@ -69,8 +88,7 @@ public class PdfToImg {
         //        String pdfPath = "/Users/chenqixuan/Downloads/002剩女三十三（25话）完结/1-10.PDF";
 //        String pdfPath = "/Users/chenqixuan/Downloads/002剩女三十三（25话）完结/11-20.PDF";
 //        String pdfPath = "/Users/chenqixuan/Downloads/002剩女三十三（25话）完结/21-23.PDF";
-//        String pdfPath = "/Users/chenqixuan/Downloads/002剩女三十三（25话）完结/24.PDF";
-        String pdfPath = "/Users/chenqixuan/Downloads/002剩女三十三（25话）完结/25.PDF";
+        String pdfPath = "/Users/chenqixuan/Downloads/002剩女三十三（25话）完结/24.PDF";
         String imgPath = "/Users/chenqixuan/Downloads/toptoon";
         pdf2Image(pdfPath, imgPath, 130);
     }
