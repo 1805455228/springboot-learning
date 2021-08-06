@@ -28,25 +28,19 @@ public class TestWebSocketController {
     @Autowired
     private WebSocketPublisher publisher;
 
-    @ApiOperation("websocket测试")
-    public void getLimitQty(@PathVariable String userId){
-        log.info("websocket测试userId：{}",userId);
-        //TODO websocket 测试
-        String storeId = "A001";
+
+    @ApiOperation("模拟业务数据发生变动场景-通知websocket测试")
+    @RequestMapping("/test/{storeId}")
+    public CommonResult<String> getLimitQtyDemo(@PathVariable String storeId){
+        log.info("controller测试storeId：{}",storeId);
+
+        //数据发生变动，websocket方式通知前端
         CommonResult<List<Map<String,Object>>> listCommonResult = groupRenewal(storeId);
         String topic = WS_TOPIC + storeId;
-        log.info("补充拼团通知topic={}",topic);
+        log.info("数据发生变动，websocket方式通知前端 topic={}",topic);
         publisher.sendBroadcastMessage(topic,listCommonResult);
 
-    }
-
-
-    @ApiOperation("websocket测试")
-    @RequestMapping("/test/{userId}")
-    public CommonResult<String> getLimitQtyDemo(@PathVariable String userId){
-        log.info("controller测试userId：{}",userId);
-
-        return CommonResult.success("ws-controller:"+userId);
+        return CommonResult.success("ws-controller:"+storeId);
     }
 
     public CommonResult<List<Map<String,Object>>> groupRenewal(String storeId) {
