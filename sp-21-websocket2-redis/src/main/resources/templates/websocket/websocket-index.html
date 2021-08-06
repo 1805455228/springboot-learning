@@ -1,0 +1,70 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Hello topic</title>
+    <script crossOrigin="anonymous" src="sockjs.js"></script>
+    <script crossOrigin="anonymous" src="stomp.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        var stompClient = null;
+
+        function setConnected(connected) {
+            document.getElementById("connect").disabled = connected;
+            document.getElementById("disconnect").disabled = !connected;
+            $("#response").html();
+        }
+
+        function connect() {
+            var socket = new SockJS("https://apiwowtest.miniso.com/pintea-order/ws/endPoint");
+            let headers = {
+                "ws-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQSE9ORSI6IjE5OTc5MDAzOTYwIiwiUkVHSVNURVJFRCI6MSwiTUVNQkVSX0lEIjozMDExMTUwNjksImV4cCI6MTYzMDIxNjA5NywiVEVOQU5UIjoiUElOVEVBIiwianRpIjoiZTM3M2M4MzMtOTkxOC00NGJjLWE3MDEtZGI4Mjc4YTMyMWVhIn0.dBkQfFfxZx_QQlJaK4KCPGgjQWFwkTqxiHF593iFDWg"
+            };
+            stompClient = Stomp.over(socket);
+            stompClient.connect(headers, function (frame) {
+                setConnected(true);
+                console.log('Connected: ' + frame);
+                //广播订阅 /ws/topic 为固定前缀  20210630133710301114649 为红包编码
+                stompClient.subscribe('/ws/topic/redEnvelope/20210630133710301114649', function (response) {
+                    console.log(response);
+                });
+                //个人消息订阅 /ws/user 为固定前缀 301115069为 会员id
+                stompClient.subscribe('/ws/user/301115069/gxm', function (response) {
+                    console.log(JSON.parse(response.body));
+                });
+            });
+        }
+
+        function disconnect() {
+            if (stompClient != null) {
+                stompClient.disconnect();
+            }
+            setConnected(false);
+            console.log("Disconnected");
+        }
+
+        function heartBeat() {
+            stompClient.subscribe("/ws/app/ping", function (response) {
+                console.log(response);
+            });
+        }
+    </script>
+</head>
+<body onload="disconnect()">
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div>
+    <div>
+        <button id="connect" onclick="connect();">Connect</button>
+        <button id="disconnect" disabled="disabled" onclick="disconnect();">Disconnect</button>
+    </div>
+    <div id="conversationDiv">
+        <labal>名字</labal>
+        <input type="text" id="name"/>
+        <button id="sendName" onclick="sendName();">Send</button>
+        <p id="response"></p>
+    </div>
+</div>
+
+</body>
+</html>

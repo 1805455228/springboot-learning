@@ -14,7 +14,13 @@
             console.log("您的浏览器支持WebSocket");
             //实现化WebSocket对象，指定要连接的服务器地址与端口  建立连接
             //url注意要加上自己的项目发布名称
-            var socketUrl="http://127.0.0.1:9074/pintea-order/web/ws/projectId/"+$("#userId").val();
+            var socketUrl="http://127.0.0.1:8091/pintea-order/ws/dcdsjkf/"+$("#userId").val();
+            //var socketUrl="http://127.0.0.1:8094/pintea-order/ws/endPoint/ws/topic/groupSquare/"+$("#userId").val();
+            //var socketUrl="http://127.0.0.1:8091/pintea-order/ws/endPoint/ws/topic/groupSquare/"+$("#userId").val();
+            //var socketUrl="http://127.0.0.1:8091/pintea-order/ws/topic/groupSquare/"+$("#userId").val();
+            //var socketUrl="http://127.0.0.1:8094/pintea-order/ws/topic/groupSquare/"+$("#userId").val();
+            //var socketUrl="http://119.23.184.238:8091/pintea-order/ws/topic/groupSquare/"+$("#userId").val();
+            //var socketUrl="http://127.0.0.1:8021/websocket/ws/topic/test/groupSquare/"+$("#userId").val();
             socketUrl=socketUrl.replace("https","wss").replace("http","ws");
             console.log(socketUrl)
             socket = new WebSocket(socketUrl);

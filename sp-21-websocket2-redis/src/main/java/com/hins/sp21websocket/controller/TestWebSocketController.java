@@ -6,6 +6,7 @@ import com.hins.sp21websocket.ws.ps.WebSocketPublisher;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +20,7 @@ import java.util.Map;
  */
 @Slf4j
 @RestController
-@RequestMapping("/websocket")
+@RequestMapping("/ws")
 public class TestWebSocketController {
 
     private final static String WS_TOPIC = "/test/groupSquare/";
@@ -28,7 +29,8 @@ public class TestWebSocketController {
     private WebSocketPublisher publisher;
 
     @ApiOperation("websocket测试")
-    public void getLimitQty(){
+    public void getLimitQty(@PathVariable String userId){
+        log.info("websocket测试userId：{}",userId);
         //TODO websocket 测试
         String storeId = "A001";
         CommonResult<List<Map<String,Object>>> listCommonResult = groupRenewal(storeId);
@@ -39,7 +41,13 @@ public class TestWebSocketController {
     }
 
 
+    @ApiOperation("websocket测试")
+    @RequestMapping("/test/{userId}")
+    public CommonResult<String> getLimitQtyDemo(@PathVariable String userId){
+        log.info("controller测试userId：{}",userId);
 
+        return CommonResult.success("ws-controller:"+userId);
+    }
 
     public CommonResult<List<Map<String,Object>>> groupRenewal(String storeId) {
         //websoket通知前端刷新

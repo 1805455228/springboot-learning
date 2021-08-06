@@ -51,17 +51,25 @@ public class CenterMemberService {
         log.info("会员中台获取会员信息请求参数token:{}", token);
         ResponseEntity<CenterMemberInfoResp> responseEntity = null;
         try {
-            responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity, CenterMemberInfoResp.class, entity);
-            CenterMemberInfoResp body = responseEntity.getBody();
-            log.info("会员中台获取会员信息响应参数: {}", body);
-            if (!HttpStatus.OK.equals(responseEntity.getStatusCode()) || null == body) {
-                log.warn("获取会员信息失败");
-                return null;
-            }
-            if (body.getCode() != HttpStatus.OK.value()) {
-                log.warn(Optional.ofNullable(body.getMessage()).orElse("获取会员信息失败"));
-                return null;
-            }
+//            responseEntity = restTemplate.exchange(url, HttpMethod.GET, entity, CenterMemberInfoResp.class, entity);
+//            CenterMemberInfoResp body = responseEntity.getBody();
+//            log.info("会员中台获取会员信息响应参数: {}", body);
+//            if (!HttpStatus.OK.equals(responseEntity.getStatusCode()) || null == body) {
+//                log.warn("获取会员信息失败");
+//                return null;
+//            }
+//            if (body.getCode() != HttpStatus.OK.value()) {
+//                log.warn(Optional.ofNullable(body.getMessage()).orElse("获取会员信息失败"));
+//                return null;
+//            }
+
+            //模拟登录测试
+            CenterMemberInfoResp body = new CenterMemberInfoResp();
+            CenterMemberInfoResp.MemberBaseResp userInfo = new CenterMemberInfoResp.MemberBaseResp();
+            userInfo.setMemberId(10028l);
+            userInfo.setName("username001");
+            userInfo.setNickname("名称002");
+            body.setData(userInfo);
             return body.getData();
         } catch (Exception e) {
             log.error(e.getMessage());
