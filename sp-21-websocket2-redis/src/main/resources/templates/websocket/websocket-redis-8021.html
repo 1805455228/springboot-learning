@@ -20,8 +20,7 @@
         function connect() {
             //var websockUrl = "http://apiwowtest.miniso.com/pintea-order/ws/endPoint";
             //var websockUrl = "http://127.0.0.1:8091/pintea-order/ws/endPoint";
-            //var websockUrl = "http://127.0.0.1:8094/pintea-order/ws/endPoint";
-            var websockUrl = "http://127.0.0.1:8021/websocket/ws/endPoint";
+            var websockUrl = "http://127.0.0.1:8094/pintea-order/ws/endPoint";
             var socket = new SockJS(websockUrl);
             let headers = {
                 "ws-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJQSE9ORSI6IjEzNTMzNzc4MzAxIiwiUkVHSVNURVJFRCI6MSwiTUVNQkVSX0lEIjozMDAwMTMzODcsImV4cCI6MTYzMzIyOTk0MywiVEVOQU5UIjoiUElOVEVBIiwianRpIjoiMmExOGQ2N2ItZmU2Ny00YTI3LWJjOTItYWQwOTUxM2QyOWM3In0.kwZUOb1xblFr7EtMVCpxkLtJ42bzFKDIZdDj9JnER1Q"
@@ -31,13 +30,11 @@
                 setConnected(true);
                 console.log('Connected: ' + frame);
                 //广播订阅 /ws/topic 为固定前缀  20210630133710301114649 为红包编码
-                var topicUrl = "/ws/topic";
-                stompClient.subscribe(topicUrl+'/test/groupSquare/202106', function (response) {
+                stompClient.subscribe('/ws/topic/redEnvelope/20210630133710301114649', function (response) {
                     console.log(response);
                 });
                 //个人消息订阅 /ws/user 为固定前缀 301115069为 会员id
-                var singleTopicUrl = "/ws/user";
-                stompClient.subscribe(singleTopicUrl + '/300013387/xxxxname', function (response) {
+                stompClient.subscribe('/ws/user/300013387/xxxxname', function (response) {
                     console.log(JSON.parse(response.body));
                 });
             });
