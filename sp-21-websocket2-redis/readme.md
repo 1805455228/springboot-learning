@@ -35,3 +35,14 @@ session.getAsyncRemote()可能是tomcat有bug引起，依旧会出现TEXT_FULL_W
 proxy_read_timeout时间设置大一点（就放在上面nginx配置中就可以了）
 
 
+
+## websocket socket.js测试
+
+- 前端demo 与服务端建立链接，监听订阅相关推送数据接口
+websocket-index.html
+
+- 模拟数据变动接口 http://127.0.0.1:8021/websocket/ws/test/202106 数据变动页面实时收到通知
+
+
+
+
