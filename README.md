@@ -48,7 +48,9 @@
 
 ### 19、springboot 整合ShardingJDBC - demo2 多数据源  mybatis-plus动态表名 
 
-### 20、springboot 整合websocket + redis（给予redis发布订阅实现分布式）
+### 20、springboot 整合websocket + redis -demo1（给予redis发布订阅实现分布式）
+
+### 21、springboot 整合websocket + redis -demo2（给予redis发布订阅实现分布式）
 
 
 
