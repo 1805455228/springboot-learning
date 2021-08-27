@@ -50,6 +50,7 @@
         <module>sp-19-shardingJdbc</module>
         <module>sp-20-websocket-redis</module>
         <module>sp-21-websocket2-redis</module>
+        <module>sp-22-apiencrypt</module>
 
     </modules>
 
