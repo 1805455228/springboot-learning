@@ -44,5 +44,12 @@ websocket-index.html
 - 模拟数据变动接口 http://127.0.0.1:8021/websocket/ws/test/202106 数据变动页面实时收到通知
 
 
+- 统一前缀：http://127.0.0.1:8021/websocket/ws/endPoint
+
+- 广播：ws/topic/getRigUpOrderDetail/+uuid
+
+- 一对一：ws/user/+memberId+/getRigUpOrderDetail/+uuid
+
+
 
 
