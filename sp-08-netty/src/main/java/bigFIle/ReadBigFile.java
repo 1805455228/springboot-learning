@@ -60,6 +60,11 @@ public class ReadBigFile {
         System.out.println(String.format("ConcurrentReadFile read file cost time : %s, count:%s", System.currentTimeMillis() - startTime2, count.get()));
     }
 
+    /**
+     * 创建文件
+     * @param filePath
+     * @throws IOException
+     */
     private static void writeFIleTxt(String filePath) throws IOException {
         //long value = 1000_000_000_000_00L;
         long value = 1000_00L;
