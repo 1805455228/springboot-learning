@@ -24,6 +24,7 @@
 
     - netty tcp 粘包拆包解决方法（编码解码协议）
     - 简单的HTTP服务端
+    - 多线程读取文件
     
     
 ### 9、springboot 整合redis
