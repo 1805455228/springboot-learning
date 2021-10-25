@@ -81,9 +81,12 @@ public class VideoDownload {
         String savePath = null;
         String staticAndMksDir = null;
         if (fileUrl != null) {
-            //下载时文件名称
-            String fileName = fileUrl.substring(fileUrl.lastIndexOf("."));
             try {
+                //下载时文件名称
+                String fileName = ".mp4";
+                if(fileUrl.contains(".mp4") || fileUrl.contains(".MP4")){
+                    fileName = fileUrl.substring(fileUrl.lastIndexOf("."));
+                }
                 //String dataStr = new SimpleDateFormat("yyyyMMdd").format(new Date());
                 String uuidName = UUID.randomUUID().toString().replace("-","");
                 //path = "resources/images/"+dataStr+"/"+uuidName+fileName;
