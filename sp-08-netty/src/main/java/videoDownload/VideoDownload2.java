@@ -25,7 +25,8 @@ public class VideoDownload2 {
 
     public static void main(String[] args) {
 
-        String filePath = "C:\\Users\\USER\\Downloads\\xjj-master\\xjj-master\\video\\ks.txt";
+//        String filePath = "C:\\Users\\USER\\Downloads\\xjj-master\\xjj-master\\video\\ks.txt";
+        String filePath = "/Volumes/ws/txt/ks.txt";
 
 
         try {
