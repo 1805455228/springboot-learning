@@ -56,7 +56,7 @@ public class VideoDownload {
             @Override
             public void handle(String videoUrl) {
                 count.incrementAndGet();
-                //TODO 业务处理
+                //TODO 业务处理 2614
                 try {
                     log.info(count +"下载视频：{}",videoUrl);
                     downloadVideoKs(videoUrl);
