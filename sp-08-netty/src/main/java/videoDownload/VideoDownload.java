@@ -55,13 +55,14 @@ public class VideoDownload {
         ConcurrentReadFile concurrentReadFile = new ConcurrentReadFile(filePath, indexPairs, new FileHandle() {
             @Override
             public void handle(String videoUrl) {
-                count.incrementAndGet();
                 //TODO 业务处理 2614
                 try {
-                    log.info(count +"下载视频：{}",videoUrl);
+                    count.incrementAndGet();
+                    //log.info(count +"下载视频：{}",videoUrl);
                     downloadVideoKs(videoUrl);
                 } catch (Exception e) {
-                    log.error("【下载失败】异常: exception: {}", e);
+                    System.out.println("【下载失败】异常: exception: ");
+                    e.printStackTrace();
                 }
             }
         });
@@ -80,7 +81,7 @@ public class VideoDownload {
         long l = 0L;
         String savePath = null;
         String staticAndMksDir = null;
-        if (fileUrl != null) {
+        if (null != fileUrl) {
             try {
                 //下载时文件名称
                 String fileName = ".mp4";
@@ -91,10 +92,11 @@ public class VideoDownload {
                 String uuidName = UUID.randomUUID().toString().replace("-","");
                 //path = "resources/images/"+dataStr+"/"+uuidName+fileName;
                 savePath = "/Volumes/ws/ks_res/"+uuidName+fileName;
+                System.out.println(String.format("保存视频路径 : %s", savePath));
                 //staticAndMksDir = Paths.get(ResourceUtils.getURL("classpath:").getPath(),"resources", "images",dataStr).toString();
                 HttpUtil.downloadFile(fileUrl, savePath);
             } catch (Exception e) {
-                log.error("下载失败：{}",fileUrl);
+                System.out.println("下载失败："+fileUrl);
                 e.printStackTrace();
             } finally {
 
