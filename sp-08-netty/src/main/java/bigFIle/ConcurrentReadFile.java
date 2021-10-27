@@ -73,14 +73,21 @@ public class ConcurrentReadFile {
     }
 
     public void end() {
+        System.out.println("线程池关闭");
         executorService.shutdown();
-        while (!executorService.isTerminated()) {
+        while (true) {
             try {
+                //isTerminated()实现子线程先运行完后再推出主线程
+                if(executorService.isTerminated()){
+                    System.out.println("所有的子线程都结束了！");
+                    break;
+                }
                 TimeUnit.MILLISECONDS.sleep(1);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+
     }
 
 }

@@ -25,8 +25,8 @@ public class VideoDownload2 {
 
     public static void main(String[] args) {
 
-//        String filePath = "C:\\Users\\USER\\Downloads\\xjj-master\\xjj-master\\video\\ks.txt";
-        String filePath = "/Volumes/ws/txt/ks.txt";
+        String filePath = "C:\\Users\\USER\\Downloads\\xjj-master\\xjj-master\\video\\ks.txt";
+//        String filePath = "/Volumes/ws/txt/ks.txt";
 
 
         try {
@@ -49,7 +49,8 @@ public class VideoDownload2 {
         System.out.println(String.format("BufferedReader read file cost time : %s", System.currentTimeMillis() - startTime1));
 
         File file = new File(filePath);
-        List<IndexPair> indexPairs = IndexCalculate.getIndex(file, 64);
+        Integer threadSize = 5;
+        List<IndexPair> indexPairs = IndexCalculate.getIndex(file, threadSize);
         System.out.println(String.format("file index size : %s, result: %s", indexPairs.size(), indexPairs));
         long startTime2 = System.currentTimeMillis();
         AtomicInteger count = new AtomicInteger();
@@ -59,16 +60,37 @@ public class VideoDownload2 {
                 count.incrementAndGet();
                 //TODO 业务处理 2614
                 try {
-                    log.info(count +"下载视频：{}",videoUrl);
+                    String outPutFilePath = "D:\\temp\\test.txt";
+                    //System.out.println(String.format("线程：%s，行号：%s 下载视频 : %s ",Thread.currentThread().getName(),count, videoUrl));
+                    //log.info(count +"下载视频：{}",videoUrl);
+                    writeFIleTxt(outPutFilePath,videoUrl);
+
                     //downloadVideoKs(videoUrl);
                 } catch (Exception e) {
-                    log.error("【下载失败】异常: exception: {}", e);
+                    //log.error("【下载失败】异常: exception: {}", e);
+                    e.printStackTrace();
                 }
             }
         });
         concurrentReadFile.readFile();
         concurrentReadFile.end();
         System.out.println(String.format("ConcurrentReadFile read file cost time : %s, count:%s", System.currentTimeMillis() - startTime2, count.get()));
+    }
+
+    /**
+     * 创建文件
+     * @param filePath
+     * @throws IOException
+     */
+    private static void writeFIleTxt(String filePath,String value) throws IOException {
+        BufferedWriter bw  = new BufferedWriter(new FileWriter(filePath));
+        //log.info("写入文件：{} ",value);
+        if (null != value) {
+            bw.write(value);
+            bw.newLine();
+            bw.flush();
+        }
+        bw.close();
     }
 
 
@@ -95,7 +117,7 @@ public class VideoDownload2 {
                 //staticAndMksDir = Paths.get(ResourceUtils.getURL("classpath:").getPath(),"resources", "images",dataStr).toString();
                 HttpUtil.downloadFile(fileUrl, savePath);
             } catch (Exception e) {
-                log.error("下载失败：{}",fileUrl);
+                //log.error("下载失败：{}",fileUrl);
                 e.printStackTrace();
             } finally {
 
