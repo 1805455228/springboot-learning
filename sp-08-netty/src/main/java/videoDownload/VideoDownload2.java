@@ -83,7 +83,8 @@ public class VideoDownload2 {
      * @throws IOException
      */
     private static void writeFIleTxt(String filePath,String value) throws IOException {
-        BufferedWriter bw  = new BufferedWriter(new FileWriter(filePath));
+//        BufferedWriter bw  = new BufferedWriter(new FileWriter(filePath));//覆盖写入
+        BufferedWriter bw  = new BufferedWriter(new FileWriter(filePath,true));//文件追加写入
         //log.info("写入文件：{} ",value);
         if (null != value) {
             bw.write(value);
