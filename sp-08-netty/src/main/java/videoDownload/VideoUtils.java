@@ -16,6 +16,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,20 +29,29 @@ import java.util.Map;
 public class VideoUtils {
     private static final Logger LOGGER = LoggerFactory.getLogger(VideoUtils.class);
 
+    public static void main(String[] args) {
+
+        String videoFilePath = "D:\\temp\\ks_res\\f8df170c17854041919b3ae60b39fc9d.mp4";
+        String targerFilePath = "D:\\temp\\ks_res\\image\\";
+        Map<String, Object> result = getScreenshot(videoFilePath,targerFilePath);
+
+        LOGGER.info("视频截图结果：{}",result);
+    }
+
     /**
      * 通过Javacv的方式获取视频截图
      *
      * @param filePath 视频文件路径
      * @return Map<String, Object>
      */
-    public static Map<String, Object> getScreenshot(String filePath) {
+    public static Map<String, Object> getScreenshot(String filePath,String targerFilePath) {
         try {
             LOGGER.debug("截取视频截图开始：" + System.currentTimeMillis());
             Map<String, Object> result = new HashMap<String, Object>();
             FFmpegFrameGrabber grabber = FFmpegFrameGrabber.createDefault(filePath);
 
             // 第一帧图片存储位置
-            String targerFilePath = filePath.substring(0, filePath.lastIndexOf("\\"));
+            //String targerFilePath = filePath.substring(0, filePath.lastIndexOf("\\"));
             // 视频文件名
             String fileName = filePath.substring(filePath.lastIndexOf("\\") + 1);
             // 图片名称
@@ -68,6 +78,8 @@ public class VideoUtils {
             String imagePath = targerFilePath + File.separator + targetFileName + "." + imageMat;
             //创建文件
             File output = new File(imagePath);
+            judeDirExists(output);
+
             ImageIO.write(bi, imageMat, output);
 
             //拼接Map信息
@@ -140,6 +152,21 @@ public class VideoUtils {
         int des_width = src.width + len_dalta_width * 2;
         int des_height = src.height + len_dalta_height * 2;
         return new Rectangle(new Dimension(des_width, des_height));
+    }
+
+    // 判断文件夹是否存在
+    public static void judeDirExists(File file) {
+
+        if(!file.getParentFile().exists()){
+            try {
+                file.getParentFile().mkdirs();
+                file.createNewFile();
+                System.out.println("创建成功!");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 }
 
