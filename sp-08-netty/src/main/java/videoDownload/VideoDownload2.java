@@ -65,8 +65,10 @@ public class VideoDownload2 {
                     //log.info(count +"下载视频：{}",videoUrl);
                     String outPutFilePath = "D:\\temp\\test.txt";
                     //writeFIleTxt(outPutFilePath,videoUrl);
+                    if(5==count.get()){
+                        downloadVideoKs(count.get(),videoUrl);
+                    }
 
-                    downloadVideoKs(count,videoUrl);
                 } catch (Exception e) {
                     //log.error("【下载失败】异常: exception: {}", e);
                     e.printStackTrace();
@@ -101,7 +103,7 @@ public class VideoDownload2 {
      * @param fileUrl
      * @return
      */
-    public static void downloadVideoKs(AtomicInteger lineNum,String fileUrl) {
+    public static void downloadVideoKs(Integer lineNum,String fileUrl) {
         long l = 0L;
         String savePath = null;
         String staticAndMksDir = null;
@@ -115,14 +117,16 @@ public class VideoDownload2 {
                 //String dataStr = new SimpleDateFormat("yyyyMMdd").format(new Date());
                 String uuidName = UUID.randomUUID().toString().replace("-","");
                 //path = "resources/images/"+dataStr+"/"+uuidName+fileName;
-                savePath = "/Volumes/ws/ks_res/"+uuidName+fileName;
+                //savePath = "/Volumes/ws/ks_res/"+uuidName+fileName;
+                savePath = "D:\\temp\\ks_res\\"+uuidName+fileName;
+
                 String resultTxt = String.format(lineNum+"-保存视频路径 : %s", savePath);
                 System.out.println(resultTxt);
                 String outPutFilePath = "D:\\temp\\test2.txt";
-                writeFIleTxt(outPutFilePath,resultTxt);
+                //writeFIleTxt(outPutFilePath,resultTxt);
 
                 //staticAndMksDir = Paths.get(ResourceUtils.getURL("classpath:").getPath(),"resources", "images",dataStr).toString();
-                //HttpUtil.downloadFile(fileUrl, savePath);
+                HttpUtil.downloadFile(fileUrl, savePath);
             } catch (Exception e) {
                 //log.error("下载失败：{}",fileUrl);
                 e.printStackTrace();

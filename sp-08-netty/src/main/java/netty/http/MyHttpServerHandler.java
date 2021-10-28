@@ -31,6 +31,7 @@ public class MyHttpServerHandler extends SimpleChannelInboundHandler<HttpObject>
 
             log.info("MyHttpServerHandler---hash："+this.hashCode());
             log.info("pipeline--hash："+ctx.pipeline().hashCode());
+
 //            Http无状态，每次传输完成即断开
 //            每次浏览器刷新，都是新的Handler、Channel、pipeline
 
