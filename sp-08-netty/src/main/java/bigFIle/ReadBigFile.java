@@ -13,7 +13,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ReadBigFile {
 
     public static void main(String[] args) throws Exception {
-        String filePath = "D:\\test.txt";
+//        String filePath = "D:\\test.txt";
+        String filePath = "/Volumes/ws/txt/ks.txt";
 //        writeFIleTxt(filePath);
 
         readFileTxt(filePath);
@@ -23,10 +24,10 @@ public class ReadBigFile {
     private static void readFileTxt(String filePath) throws Exception {
         long startTime1 = System.currentTimeMillis();
         BufferedReader br = new BufferedReader(new FileReader(filePath));
-        //Set<String> set = new HashSet<>(200_000_000);
+        Set<String> set = new HashSet<>(200_000_000);
         String line;
         while ((line = br.readLine()) != null) {
-            //set.add(line);
+            set.add(line);
         }
         br.close();
         System.out.println(String.format("BufferedReader read file cost time : %s", System.currentTimeMillis() - startTime1));
@@ -41,18 +42,18 @@ public class ReadBigFile {
             public void handle(String value) {
                 count.incrementAndGet();
                 //TODO 业务处理
-                try {
-                    double d = Math.random();
-                    // 通过d获取一个[0, 100)之间的整数
-                    int time = (int)(d*10);
-                    System.out.println(Thread.currentThread()+"=======read========"+count+"=====time====="+time+"===v==="+value);
-                    Thread.sleep(time*1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-//                if (!set.contains(value)) {
-//                    System.out.println("ConcurrentReadFile read file exception:" + value);
+//                try {
+//                    double d = Math.random();
+//                    // 通过d获取一个[0, 100)之间的整数
+//                    int time = (int)(d*10);
+//                    System.out.println(Thread.currentThread()+"=======read========"+count+"=====time====="+time+"===v==="+value);
+//                    Thread.sleep(time*1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
 //                }
+                if (!set.contains(value)) {
+                    System.out.println("ConcurrentReadFile read file exception:" + value);
+                }
             }
         });
         concurrentReadFile.readFile();
