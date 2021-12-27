@@ -3,6 +3,7 @@ package com.hins.sp23.sp23mongodb.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
+ * 文档--集合
  * @author : chenqixuan
  * @date : 2021/12/27
  */
