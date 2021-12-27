@@ -1,0 +1,19 @@
+server:
+  port: 8023
+  servlet:
+    context-path: /mongodb
+
+spring:
+  application:
+    name: mongodb-demo
+  profiles:
+    active: dev
+    include: include-mongodb
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+adminPath: /admin
+frontPath: /front
+apiPath: /api
+

@@ -1,0 +1,4 @@
+file:
+  baseUri: /data/res/server/attachment
+  gainPath: http://127.0.0.1/attachment
+
