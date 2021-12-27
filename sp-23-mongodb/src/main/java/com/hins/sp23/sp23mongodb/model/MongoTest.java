@@ -1,5 +1,6 @@
 package com.hins.sp23.sp23mongodb.model;
 
+import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -7,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author : chenqixuan
  * @date : 2021/12/27
  */
+@Data
 @Document(collection = "mongoTest")
 public class MongoTest {
     private Integer id;
