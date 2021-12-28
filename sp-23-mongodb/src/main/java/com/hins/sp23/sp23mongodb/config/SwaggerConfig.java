@@ -22,13 +22,13 @@ import java.util.List;
  * Swagger API文档相关配置
  * @author mpg
  */
-@Profile({"dev","test", "test-apollo","test-local","local-dev"})
+@Profile({"test", "test-apollo","test-local","local-dev","dev"})
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
 
     /**
-     * http://127.0.0.1:9201/api/data/cowork/admin/swagger-ui.html#/
+     * http://localhost:8023/mongodb/swagger-ui.html#
      * 创建API应用
      * apiInfo() 增加API相关信息
      * 通过select()函数返回一个ApiSelectorBuilder实例,用来控制哪些接口暴露给Swagger来展现，
@@ -41,7 +41,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.topdata.bcp.cowork"))
+                .apis(RequestHandlerSelectors.basePackage("com.hins.sp23.sp23mongodb"))
                 .paths(PathSelectors.any())
                 .build()
                 .globalOperationParameters(globalOperation());

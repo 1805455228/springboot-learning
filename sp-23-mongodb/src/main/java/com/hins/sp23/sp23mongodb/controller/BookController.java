@@ -3,6 +3,8 @@ package com.hins.sp23.sp23mongodb.controller;
 
 import com.hins.sp23.sp23mongodb.model.Book;
 import com.hins.sp23.sp23mongodb.repositories.BookRepository;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,7 @@ import java.util.Optional;
  * @date : 2021/12/27
  */
 //@CrossOrigin("http://localhost:8080")
+@Api(value = "mongodb书本测试", tags = "mongodb书本测试")
 @RestController
 @RequestMapping("/v1/mongodbapp")
 public class BookController
@@ -24,6 +27,7 @@ public class BookController
     @Autowired
     private BookRepository bookRepository;
 
+    @ApiOperation("获取书本对象")
     @GetMapping("/books")
     public ResponseEntity<List> getAllBooks(@RequestParam(required = false) String bookTitle) {
         try {
@@ -44,6 +48,7 @@ public class BookController
         }
     }
 
+    @ApiOperation("获取单个书本对象")
     @GetMapping("/books/{id}")
     public ResponseEntity getBookById(@PathVariable("id") String id)
     {
@@ -59,6 +64,7 @@ public class BookController
         }
     }
 
+    @ApiOperation("添加书本对象")
     @PostMapping("/books")
     public ResponseEntity addABookToLibrary(@RequestBody Book book)
     {
@@ -74,6 +80,7 @@ public class BookController
         }
     }
 
+    @ApiOperation("修改书本对象")
     @PutMapping("/books/{id}")
     public ResponseEntity updateABook(@PathVariable("id") String id, @RequestBody Book book)
     {
@@ -91,6 +98,7 @@ public class BookController
         }
     }
 
+    @ApiOperation("删除书本对象")
     @DeleteMapping("/books/{id}")
     public ResponseEntity deleteABook(@PathVariable("id") String id)
     {
