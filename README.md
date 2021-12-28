@@ -55,6 +55,8 @@
 
 ### 22、springboot 接口API注解灵活加密
 
+### 23、springboot 整合mongodb（动态表单设计器）
+
 
 ### 任务计划
 
@@ -68,7 +70,7 @@
 
 ### Jpa的代码生成
 
-### springboot 整合mongodb
+
 
 ### springboot 集成 shiro 权限认证
 
