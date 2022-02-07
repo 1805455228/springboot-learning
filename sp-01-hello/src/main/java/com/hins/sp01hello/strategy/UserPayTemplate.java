@@ -20,7 +20,7 @@ public abstract class UserPayTemplate implements UserPayService, InitializingBea
     }
 
     @Override
-    public  abstract BigDecimal quotePrice(BigDecimal orderPrice);
+    public abstract BigDecimal quotePrice(BigDecimal orderPrice);
 
     @Override
     public void afterPropertiesSet() throws Exception {
