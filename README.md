@@ -34,6 +34,10 @@
 
 ### 13、springboot 事务使用
 
+- 基于注解方事务失效场景（非public方法、有fainal、static修饰的方法、tyr catch 吞没异常） 底层是aop 所以public方法、有fainal、static修饰的方法事务会失效
+  
+- 编程式事务
+
 ### 14、springboot 整合ElasticSearch（搜索、全文检索）类似传统的solr
 
 ### 15、springboot 整合mycat
