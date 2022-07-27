@@ -1,10 +1,12 @@
 package com.hins.sp01hello.excel;
 
-import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.xssf.usermodel.*;
 import org.springframework.util.StopWatch;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -16,7 +18,7 @@ import java.util.*;
  * @author qixuan.chen
  * @date 2022/7/8 19:46
  */
-public class PoiExeelTest {
+public class PoiExeelSXSSFTest {
 
 
     public static void main(String[] args) {
@@ -38,7 +40,7 @@ public class PoiExeelTest {
         titleMap.put("金额", "price");
 
         List<Map<String,Object>> list = new ArrayList<>();
-        for(int i=0;i<500000;i++){
+        for(int i=0;i<5000;i++){
             HashMap<String, Object> hashMap = new HashMap();
             hashMap.put("name", "张三"+i);
             hashMap.put("age", i);
@@ -122,7 +124,7 @@ public class PoiExeelTest {
             String newFileName = UUID.randomUUID().toString() + "_" + "送货单" + ".xlsx";
             sw.stop();
             System.out.println("耗时1："+sw.getTotalTimeSeconds());
-
+            
             //修改模板内容导出新模板
             sw.start();
             FileOutputStream out = new FileOutputStream("/Users/chenqixuan/Downloads/"+newFileName);

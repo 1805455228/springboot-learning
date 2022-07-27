@@ -20,6 +20,7 @@ public class FileRename {
 //    static String dir = "/Users/chenqixuan/Downloads/历史碎片";//文件所在路径，所有文件的根目录，记得修改为你电脑上的文件所在路径
 
     public static void main(String[] args) throws IOException {
+
         recursiveTraversalFolder(dir);//递归遍历此路径下所有文件夹
     }
     /**
