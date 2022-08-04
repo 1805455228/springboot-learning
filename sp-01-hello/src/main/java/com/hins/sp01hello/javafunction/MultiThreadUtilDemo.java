@@ -11,11 +11,13 @@ public class MultiThreadUtilDemo {
 
 
     public static void main(String[] args) throws Exception {
+        String idType = "1";
+        Integer pageNum = 1;
         MultiThreadUtil<StudentDO,ClassBO> util = new MultiThreadUtil();
         util.setJobName("班级统计");
         util.setMultiThreadFlag(true);//是否并行分批
         util.setGetDBData(()->getStudentList());
-        util.setProFun((list) ->getClasstList(list));
+        util.setProFun((list) ->getClasstList(idType,list,pageNum));
         List<ClassBO> classBOList = util.summary();
 
         System.out.println("记录数："+classBOList.size());
@@ -36,7 +38,7 @@ public class MultiThreadUtilDemo {
     }
 
 
-    private static List<ClassBO> getClasstList(List<StudentDO> list){
+    private static List<ClassBO> getClasstList(String idType,List<StudentDO> list,Integer pageNum){
         List<ClassBO> result = new ArrayList<>();
         for(int i=0;i<100;i++){
             ClassBO classBO = new ClassBO();
