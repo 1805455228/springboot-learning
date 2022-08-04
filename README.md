@@ -9,6 +9,7 @@
  - 去除图片水印
  - 设计模式组合使用（策略模式，模板模式，工厂模式） 去除多重if else
  - 并发concurrent、CompletableFuture异步线程
+ - 多线程分批（函数式接口，函数式参数）
 
 ### 2、springboot 之 过滤器,拦截器，监听器
 
