@@ -1,14 +1,30 @@
 package com.hins.app.sp04mybatisplus.lock.controller;
 
 
+import com.alibaba.druid.support.json.JSONUtils;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.hins.app.sp04mybatisplus.lock.entity.Product;
 import com.hins.app.sp04mybatisplus.lock.mapper.ProductMapper;
 import com.hins.app.sp04mybatisplus.lock.service.IProductService;
+import javafx.util.Pair;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.cache.TransactionalCacheManager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 import com.hins.app.sp04mybatisplus.common.BaseController;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * <p>
@@ -18,6 +34,7 @@ import com.hins.app.sp04mybatisplus.common.BaseController;
  * @author nima
  * @since 2021-01-25
  */
+@Slf4j
 @RestController
 @RequestMapping("/lock/product")
 public class ProductController extends BaseController {
@@ -53,5 +70,153 @@ public class ProductController extends BaseController {
 
         return  p3.getPrice().toString();
     }
+
+
+    /**
+     * Spring Transactional一直是RD的事务神器，但是如果用不好，反会伤了自己。下面总结@Transactional经常遇到的几个场景:
+     * @Transactional 加于private方法, 无效
+     * @Transactional 加于未加入接口的public方法, 再通过普通接口方法调用, 无效
+     * @Transactional 加于接口方法, 无论下面调用的是private或public方法, 都有效（timeout放在下面调用的private或public方法上都不生效，只在外层方法中有效）
+     * @Transactional 加于接口方法后, 被本类普通接口方法直接调用, 无效
+     * @Transactional 加于接口方法后, 被本类普通接口方法通过接口调用, 有效
+     * @Transactional 加于接口方法后, 被它类的接口方法调用, 有效
+     * @Transactional 加于接口方法后, 被它类的私有方法调用后, 有效
+     */
+
+    /**
+     *
+     * 多线程事务控制与上下文事务
+     * 批量写操作异步处理（事务回滚）
+     */
+    @RequestMapping("/asyncAdd")
+    public String asyncBatchAddProduct(){
+        List<Product> list = new ArrayList<>();
+        for (int i=0;i<5;i++){
+            Product obj = new Product();
+            obj.setPrice(100+i);
+            obj.setName("name"+i);
+            obj.setVersion(12);
+            list.add(obj);
+        }
+
+        List<CompletableFuture> futureList = new ArrayList<>();
+        //批量保存异步处理
+        list.forEach(item ->{
+            CompletableFuture<Map<Boolean,String>> future = CompletableFuture.supplyAsync(() ->{
+                //异步线程中的事务
+                log.info("异步线程事务");
+                return productService.addProduct(item);
+            }).exceptionally((ex)->{
+                log.error("异步线程运行异常");
+                return null;
+            });
+            futureList.add(future);
+        });
+//        futureList.forEach(item ->{
+//            item.join();
+//        });
+        CompletableFuture.allOf(futureList.toArray(new CompletableFuture[futureList.size()])).join();
+
+
+
+        //上下文事务（与异步线程的事务式隔离开的，互不影响的）
+        log.info("主线程上下文事务");
+        Product obj2 = new Product();
+        obj2.setPrice(10001);
+        obj2.setName("aaaaa2");
+        obj2.setVersion(28);
+        productService.save(obj2);
+
+        int m = 8/0;//异常
+
+        return "sucess:异步";
+    }
+
+
+
+    /**
+     *
+     * 多线程事务控制与上下文事务
+     * 批量写操作异步处理（事务回滚）
+     */
+    @RequestMapping("/asyncAddTry")
+    public String asyncBatchAddProductTry(){
+        List<Product> list = new ArrayList<>();
+        for (int i=0;i<5;i++){
+            Product obj = new Product();
+            obj.setPrice(100+i);
+            obj.setName("name"+i);
+            obj.setVersion(12);
+            list.add(obj);
+        }
+
+        List<CompletableFuture> futureList = new ArrayList<>();
+        //批量保存异步处理
+        list.forEach(item ->{
+            CompletableFuture<Map<Boolean,String>> future = CompletableFuture.supplyAsync(() ->{
+                //异步线程中的事务
+                return productService.addProductTry(item);
+            }).exceptionally((ex) ->{
+                log.error("外层-异步线程异常");
+                return null;
+            });
+            futureList.add(future);
+        });
+//        futureList.forEach(item ->{
+//            item.join();
+//        });
+        CompletableFuture.allOf(futureList.toArray(new CompletableFuture[futureList.size()])).join();
+
+
+        //TODO 获取异常，处理失败信息
+
+        //上下文事务（与异步线程的事务式隔离开的，互不影响的）
+        Product obj2 = new Product();
+        obj2.setPrice(10001);
+        obj2.setName("aaaaa2");
+        obj2.setVersion(28);
+        productService.save(obj2);
+
+        System.out.println(8/0);//异常
+
+        return "sucess:异步";
+    }
+
+
+
+
+    //////////////////////////////本类方法直接调用，事务无效, 通过接口调用，有效//////////////////////////////////
+    /**
+     * 本类方法直接调用，事务无效, 通过接口调用，有效
+     * 本类方法直接调用事务注解方法无效
+     * @param entity
+     * @return
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public Map<Boolean,String> addProductTry(Product entity){
+
+        Map<Boolean,String> result = new HashMap<>();
+        log.info("异步处理");
+        if("name2".equals(entity.getName())){
+            try {
+                System.out.println("添加异常："+entity.getName());
+                productService.save(entity);
+                result.put(false,"添加异常");
+                System.out.println(10/0);
+                return result;
+            } catch (Exception e) {
+                throw new RuntimeException("yic:error");
+            }
+
+        }else{
+            System.out.println("添加成功："+entity.getName());
+            productService.save(entity);
+            result.put(true,"添加异常");
+            return result;
+        }
+
+    }
+
+
 
 }

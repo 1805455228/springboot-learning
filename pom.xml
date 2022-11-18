@@ -52,6 +52,7 @@
         <module>sp-21-websocket2-redis</module>
         <module>sp-22-apiencrypt</module>
         <module>sp-23-mongodb</module>
+        <module>sp-24-myspring-ioc</module>
 
     </modules>
 
