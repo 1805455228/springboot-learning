@@ -1,29 +1,17 @@
 package com.hins.app.sp04mybatisplus.lock.controller;
 
 
-import com.alibaba.druid.support.json.JSONUtils;
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.hins.app.sp04mybatisplus.lock.entity.Product;
-import com.hins.app.sp04mybatisplus.lock.mapper.ProductMapper;
-import com.hins.app.sp04mybatisplus.lock.service.IProductService;
-import javafx.util.Pair;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.ibatis.cache.TransactionalCacheManager;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.TransactionDefinition;
-import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.interceptor.TransactionAspectSupport;
-import org.springframework.transaction.support.DefaultTransactionDefinition;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
 import com.hins.app.sp04mybatisplus.common.BaseController;
+import com.hins.app.sp04mybatisplus.lock.entity.Product;
+import com.hins.app.sp04mybatisplus.lock.service.IProductService;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.tuple.Pair;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -82,6 +70,76 @@ public class ProductController extends BaseController {
      * @Transactional 加于接口方法后, 被它类的接口方法调用, 有效
      * @Transactional 加于接口方法后, 被它类的私有方法调用后, 有效
      */
+
+
+    /**
+     *
+     * 多线程事务控制与上下文事务
+     * 批量写操作异步处理（事务回滚）
+     */
+    @RequestMapping("/asyncBatchAdd")
+    public Object asyncBatchAddProductTransational(){
+        List<Product> list = new ArrayList<>();
+        for (int i=0;i<5;i++){
+            Product obj = new Product();
+            obj.setPrice(100+i);
+            obj.setName("name"+i);
+            obj.setVersion(12);
+            list.add(obj);
+        }
+
+        List<CompletableFuture<Pair<Boolean,String>>> futureList = new ArrayList<>();
+        //批量保存异步处理
+        list.forEach(entity ->{
+            CompletableFuture<Pair<Boolean,String>> future  = CompletableFuture.supplyAsync(() ->{
+                //异步线程中的事务
+                log.info("异步线程事务");
+                return productService.asyncAddProduct(entity);
+            }).exceptionally((ex)->{
+                log.error("try catch 异步线程异常");
+                String msg = String.format("添加失败，名称：%s",entity.getName());
+                return Pair.of(false,msg);
+            });
+            futureList.add(future);
+        });
+//        futureList.forEach(item ->{
+//            item.join();
+//        });
+        CompletableFuture.allOf(futureList.toArray(new CompletableFuture[futureList.size()])).join();
+
+        Map<Boolean,String> result = new HashMap<>();
+        Set<String> errorList = new HashSet<>();
+        futureList.forEach(future ->{
+            Pair<Boolean,String> pair = future.getNow(null);
+            if(pair.getLeft()){
+                return;
+            }
+            String errorMsg = pair.getRight();
+            errorList.add(errorMsg);
+        });
+
+
+        //上下文事务（与异步线程的事务式隔离开的，互不影响的）
+        log.info("主线程上下文事务");
+        try {
+            Product obj2 = new Product();
+            obj2.setPrice(10001);
+            obj2.setName("aaaaa2");
+            obj2.setVersion(28);
+            productService.save(obj2);
+
+            int m = 8/0;//异常
+        } catch (Exception e) {
+            log.error("上下文事务异常：{}",e);
+            //e.printStackTrace();
+        }
+
+        return errorList;
+    }
+
+
+
+
 
     /**
      *

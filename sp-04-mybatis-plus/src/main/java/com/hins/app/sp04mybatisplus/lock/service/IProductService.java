@@ -2,8 +2,10 @@ package com.hins.app.sp04mybatisplus.lock.service;
 
 import com.hins.app.sp04mybatisplus.lock.entity.Product;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * <p>
@@ -15,6 +17,10 @@ import java.util.Map;
  */
 public interface IProductService extends IService<Product> {
 
+
+
+
+    Pair<Boolean,String> asyncAddProduct(Product entity);
 
     /**
      * 事务测试

@@ -17,6 +17,19 @@
 
 ### 4、springboot 集成 mybatis-plus、分页、代码生成
 
+```text
+Spring Transactional一直是RD的事务神器，但是如果用不好，反会伤了自己。下面总结@Transactional经常遇到的几个场景:
+
+- @Transactional 加于private方法, 无效
+- @Transactional 加于未加入接口的public方法, 再通过普通接口方法调用, 无效
+- @Transactional 加于接口方法, 无论下面调用的是private或public方法, 都有效（timeout放在下面调用的private或public方法上都不生效，只在外层方法中有效）
+- @Transactional 加于接口方法后, 被本类普通接口方法直接调用, 无效
+- @Transactional 加于接口方法后, 被本类普通接口方法通过接口调用, 有效
+- @Transactional 加于接口方法后, 被它类的接口方法调用, 有效
+- @Transactional 加于接口方法后, 被它类的私有方法调用后, 有效
+
+```
+
 ### 5、springboot 集成 swagger2 restful api 调用测试
 
 ### 6、springboot thymeleaf 模板引擎页面
