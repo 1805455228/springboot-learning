@@ -17,6 +17,8 @@
 
 ### 4、springboot 集成 mybatis-plus、分页、代码生成
 
+- 批量异步线程处理，异步线程事务
+
 ```text
 Spring Transactional一直是RD的事务神器，但是如果用不好，反会伤了自己。下面总结@Transactional经常遇到的几个场景:
 
